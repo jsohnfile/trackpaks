@@ -1,7 +1,32 @@
-.HomePage {
+.LoginPage {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
     margin-bottom: 50px;
+}
+
+.LoginPage-form-container {
+    border: 2px solid black;
+    border-radius: 25px;
+    width: 25%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.LoginPage-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+.LoginPage-form-header {
+    margin: 30px 0;
+}
+
+.LoginPage-signup-msg {
+    font-size: 12px;
 }
