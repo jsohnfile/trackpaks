@@ -30,6 +30,7 @@ class MyPackage extends Component {
                     >
                         DELETE
                     </button>
+                    <Link className='edit button' to={{ pathname: '/edit', state: {myPackage: this.props.myPackage}  }}>EDIT</Link>
                 </div>
     
                 

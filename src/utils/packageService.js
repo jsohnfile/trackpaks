@@ -36,7 +36,7 @@ export function deletePackageAPI(packageIdToDelete) {
 }
 
 //
-export function updatePuppyAPI(packageToUpdate) {
+export function updatePackageAPI(packageToUpdate) {
     return fetch(`${BASE_URL}/${packageToUpdate._id}`, {
         method: 'PUT',
         headers: {

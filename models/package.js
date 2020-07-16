@@ -17,6 +17,10 @@ const packageSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
         ref: 'User'
+    },
+    details: {
+        type: Object,
+        default:{}
     }
 }, { timestamps: true }
 );

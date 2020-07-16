@@ -3,15 +3,17 @@ import { Route, Switch, NavLink, Redirect } from 'react-router-dom';
 import './App.css';
 
 import AddPackagePage from '../pages/AddPackagePage/AddPackagePage';
+import EditPackagePage from '../pages/EditPackagePage/EditPackagePage';
 import AccountPage from '../pages/AccountPage/AccountPage';
 import LoginPage from '../pages/LoginPage/LoginPage';
 import SignupPage from '../pages/SignupPage/SignupPage';
 import userService from '../utils/userService';
 import * as packageService from '../utils/packageService';
+import * as packageAPI from '../utils/shippoAPI';
 
 class App extends Component {
   state = {
-    packages: [],
+    packages: [{}],
     user: userService.getUser(),
   }
   
@@ -40,6 +42,11 @@ class App extends Component {
     }), () => this.props.history.push('/account'));
   }
 
+  handleUpdatePackage = async data => {
+    await packageService.updatePackageAPI(data);
+    this.getAllPackages();
+  }
+
   getAllPackages = async () => {
     const packages = await packageService.getAllPackagesAPI();
     this.setState({
@@ -47,14 +54,18 @@ class App extends Component {
     }, () => this.props.history.push('/account'));
   }
 
-  async componentDidMount() {
-    this.getAllPackages();
-    const details = await trackingAPI.getAllPackageDetail();
-    this.setState({
-      packages: [...this.state.packages],
-      
-    })
-  }
+  // componentDidMount() {
+  //   this.getAllPackages();
+  //   let packagesCopy= [...this.state.packages];
+  //   packagesCopy.map(async myPackage => {
+  //     myPackage.details = await packageAPI.getAllPackageDetail(myPackage.carrier, myPackage.trackingNumber)
+  //     console.log(myPackage.details)
+  //   })
+  //   this.setState({
+  //     packages: [...packagesCopy],
+
+  //   })
+  // }
 
   render() {
     return (
@@ -99,6 +110,12 @@ class App extends Component {
             <Route exact path='/add' render={() =>
               userService.getUser() ?
                 <AddPackagePage handleAddPackage={this.handleAddPackage}/>
+                :
+                <Redirect to='/login' />
+            } />
+            <Route exact path='/edit' render={({history, location}) =>
+              userService.getUser() ?
+                <EditPackagePage handleUpdatePackage={this.handleUpdatePackage} location={location}/>
                 :
                 <Redirect to='/login' />
             } />

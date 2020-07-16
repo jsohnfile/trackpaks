@@ -10,6 +10,8 @@ require('./config/database');
 
 const usersRoutes = require('./routes/users');
 const packagesRoutes = require('./routes/packages');
+const shippoRoutes = require('./routes/shippoAPI');
+const { allowedNodeEnvironmentFlags } = require('process');
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -23,6 +25,7 @@ app.use('/api/users', usersRoutes);
 // Load config/auth
 app.use(require('./config/auth'));
 app.use('/api/packages', packagesRoutes);
+app.use('/api/shippoAPI', shippoRoutes);
 
 // Catch all
 app.get('/*', (req, res) => {
