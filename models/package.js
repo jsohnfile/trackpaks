@@ -10,7 +10,7 @@ const packageSchema = new Schema({
         type: String,
         required: true
     },
-    courier: {
+    carrier: {
         type: String,
         required: true
     },

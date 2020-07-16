@@ -21,7 +21,7 @@ class MyPackage extends Component {
                 <div className="marker">{this.state.isCollapsed ? "+" : "-"}</div>
                 </button>
                 <div className='MyPackage-content' style={this.state.isCollapsed ? {"display":"none"} : {"display":"block"}}>
-                <p>{this.props.myPackage.courier}</p>
+                <p>{this.props.myPackage.carrier}</p>
                 <p>{this.props.myPackage.trackingNumber}</p>
                 <p>loading tracking history...</p>
                     <button

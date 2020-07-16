@@ -43,8 +43,8 @@ class AddPackagePage extends Component {
                         <label>Courier Service</label>
                         <select
                             className="form-control"
-                            name="courier"
-                            value={this.state.formData.courier}
+                            name="carrier"
+                            value={this.state.formData.carrier}
                             onChange={this.handleChange}
                             required
                         >

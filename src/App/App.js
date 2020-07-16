@@ -47,6 +47,15 @@ class App extends Component {
     }, () => this.props.history.push('/account'));
   }
 
+  async componentDidMount() {
+    this.getAllPackages();
+    const details = await trackingAPI.getAllPackageDetail();
+    this.setState({
+      packages: [...this.state.packages],
+      
+    })
+  }
+
   render() {
     return (
       <div className="App">
