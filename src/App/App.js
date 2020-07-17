@@ -56,19 +56,6 @@ class App extends Component {
     }, () => this.props.history.push('/account'));
   }
 
-  // componentDidMount() {
-  //   this.getAllPackages();
-  //   let packagesCopy= [...this.state.packages];
-  //   packagesCopy.map(async myPackage => {
-  //     myPackage.details = await packageAPI.getAllPackageDetail(myPackage.carrier, myPackage.trackingNumber)
-  //     console.log(myPackage.details)
-  //   })
-  //   this.setState({
-  //     packages: [...packagesCopy],
-
-  //   })
-  // }
-
   render() {
     return (
       <div className="App">

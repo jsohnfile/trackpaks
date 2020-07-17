@@ -15,7 +15,7 @@
     text-align: left;
     outline: none;
     font-size: 15px;
-    /* border-radius: 25px; */
+    border-radius: 25px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -25,11 +25,6 @@
     font-size: 20px;
     font-weight: bold;
 }
-
-/* .MyPackage-collapsible:active {
-    background-color: #ccc;
-    border-radius: 25px 0 0 25px;
-} */
 
 .MyPackage-collapsible:active, .MyPackage-collapsible:hover {
     background-color: #ccc;
@@ -41,4 +36,9 @@
     background-color: #f1f1f1;
     transition: 0.2s ease-out;
     border-radius: 0px 0px 25px 25px;
+}
+
+.MyPackage-divider {
+    font-size: 30px;
+    font-weight: bold;
 }

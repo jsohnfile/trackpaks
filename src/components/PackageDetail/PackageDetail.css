@@ -1,0 +1,27 @@
+.PackageDetail-container {
+    margin: 10px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 2px solid black;
+    padding: 5px;
+}
+
+.PackageDetail-date {
+    width: 50%;
+}
+
+.PackageDetail-location {
+    width: 50%;
+}
+
+.PackageDetail-details {
+    width: 100%;
+}
+
+.PackageDetail-divider {
+    width: 100%;
+    font-size: 30px;
+    text-align: center;
+}
