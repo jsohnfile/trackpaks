@@ -1,19 +1,19 @@
 const request = require('request');
+const rootURL = 'https://api.goshippo.com/tracks'
 
 module.exports = {
     index
 };
 
-function index() {
+async function index(req, res) {
     const options = {
-        url: rootURL + `/${carrier}/${trackingNumber}`,
+        url: rootURL + `/${req.params.carrier}/${req.params.trackingNumber}`,
         headers: {
           'Authorization': 'ShippoToken ' + process.env.API_TOKEN
         }
       };
-      request(options, function(err, response, body) {
-        const userData = JSON.parse(body);
-        // update the options url to fetch the user's repos
-        options.url = userData.repos_url;
+      await request(options, function(err, response, body) {
+        const shippingData = JSON.parse(body);
+        res.status(200).json(shippingData)
       })
 }

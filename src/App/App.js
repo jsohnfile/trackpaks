@@ -9,11 +9,11 @@ import LoginPage from '../pages/LoginPage/LoginPage';
 import SignupPage from '../pages/SignupPage/SignupPage';
 import userService from '../utils/userService';
 import * as packageService from '../utils/packageService';
-import * as packageAPI from '../utils/shippoAPI';
+
 
 class App extends Component {
   state = {
-    packages: [{}],
+    packages: [],
     user: userService.getUser(),
   }
   
@@ -46,6 +46,8 @@ class App extends Component {
     await packageService.updatePackageAPI(data);
     this.getAllPackages();
   }
+
+
 
   getAllPackages = async () => {
     const packages = await packageService.getAllPackagesAPI();
