@@ -38,7 +38,7 @@ class MyPackage extends Component {
                     <div className="marker">{this.state.isCollapsed ? "+" : "-"}</div>
                 </button>
                 <div className='MyPackage-content' style={this.state.isCollapsed ? {"display":"none"} : {"display":"block"}}>
-                <p>CARRIER: {this.props.myPackage.carrier}</p>
+                <p>Carrier: {this.props.myPackage.carrier.toUpperCase()}</p>
                 <p>Tracking Number: {this.props.myPackage.trackingNumber}</p>
                 <p>Status: {this.state.details !== null? this.state.details.tracking_status.status : "pending"}</p>
                 {this.state.details !== null? `ETA: ${this.state.details.eta} ${this.state.details.eta > this.state.details.original_eta? "Delayed" : "On Time"}`: ""}
