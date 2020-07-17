@@ -23,7 +23,7 @@ class MyPackage extends Component {
     }
     componentDidMount() {
         this.getDetails();
-        this.refreshDetailId = setInterval(this.getDetails, 100000)
+        this.refreshDetailId = setInterval(this.getDetails, 500000)
     }
 
     render() {
@@ -34,13 +34,14 @@ class MyPackage extends Component {
                     onClick={this.collapseDetails}
                 >
                     <div>{this.props.myPackage.name}</div>
+                    <div>{this.state.details !== null ? `Status: ${this.state.details.tracking_status.status}`: "...loading"}</div>
                     <div className="marker">{this.state.isCollapsed ? "+" : "-"}</div>
                 </button>
                 <div className='MyPackage-content' style={this.state.isCollapsed ? {"display":"none"} : {"display":"block"}}>
                 <p>CARRIER: {this.props.myPackage.carrier}</p>
                 <p>Tracking Number: {this.props.myPackage.trackingNumber}</p>
                 <p>Status: {this.state.details !== null? this.state.details.tracking_status.status : "pending"}</p>
-                {this.state.details !== null? `ETA: ${this.state.details.eta} <em> ${this.state.details.eta > this.state.details.original_eta? "Delayed" : "On Time"}</em>`: ""}
+                {this.state.details !== null? `ETA: ${this.state.details.eta} ${this.state.details.eta > this.state.details.original_eta? "Delayed" : "On Time"}`: ""}
                 <div>
                     {this.state.details !== null?  
                     this.state.details.tracking_history.reverse().map(trackDetail => 
