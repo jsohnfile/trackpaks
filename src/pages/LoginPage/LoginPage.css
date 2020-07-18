@@ -9,7 +9,7 @@
 .LoginPage-form-container {
     border: 2px solid black;
     border-radius: 25px;
-    width: 25%;
+    width: 30%;
     height: 300px;
     display: flex;
     flex-direction: column;
@@ -29,4 +29,16 @@
 
 .LoginPage-signup-msg {
     font-size: 12px;
+}
+
+.LoginPage-message {
+    width: 60%;
+    margin-bottom: 100px;
+}
+
+.header-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

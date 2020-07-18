@@ -15,6 +15,7 @@ class App extends Component {
   state = {
     packages: [],
     user: userService.getUser(),
+    menuClicked: false
   }
   
   handleSignupOrLogin = () => {
@@ -56,33 +57,49 @@ class App extends Component {
     }, () => this.props.history.push('/account'));
   }
 
+  handleMenuClick = () => {
+    this.setState(
+      {menuClicked: !this.state.menuClicked}
+    )
+  }
+
+  componentDidMount() {
+    this.getAllPackages()
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">TrackPaks
-          <nav>
-          {userService.getUser() ?
-            <>
-            {userService.getUser().name ? `WELCOME, ${userService.getUser().name.toUpperCase()}` : ''}
-              &nbsp;&nbsp;&nbsp;
-              <NavLink exact to='/logout' onClick={this.handleLogout}>LOGOUT</NavLink>
-              &nbsp;&nbsp;&nbsp;
-              <NavLink exact to="/account" className="App-link">My Account</NavLink>
-              &nbsp;&nbsp;&nbsp;
-              <NavLink exact to="/add" className="App-link">Add a Package</NavLink>
-              &nbsp;&nbsp;&nbsp;
-            </>
-            :
-            <>
-                <NavLink exact to='/signup' className="App-link">SIGNUP</NavLink>
-                &nbsp;&nbsp;&nbsp;
-                <NavLink exact to='/' className="App-link">LOGIN</NavLink>
-                &nbsp;&nbsp;&nbsp;
-            </>
-          }
-          </nav>
+        <header className="App-header">
+        <div id="navbar">
+          <button className="openbtn" onClick={this.handleMenuClick}><img className="App-logo" src="https://i.imgur.com/3fuPdBZ.png" /></button>
+          <img className="App-trackpaks" src="https://i.imgur.com/X43Rqme.png" />
+        </div>
         </header>
         <main>
+
+          <div className="sidebar" id="mySidebar" style={this.state.menuClicked ? {"display": "block"}: {"display": "none"}}>
+            <div className="closebtn-container" ><button className="closebtn" onClick={this.handleMenuClick}>X</button></div>
+            {userService.getUser() ?
+              <div className="App-links">
+              <p className="welcome-user">{userService.getUser().name ? `WELCOME, ${userService.getUser().name.toUpperCase()}` : ''}</p>
+                &nbsp;&nbsp;&nbsp;
+                <NavLink exact to="/account" className="App-link">My Account</NavLink>
+                &nbsp;&nbsp;&nbsp;
+                <NavLink exact to="/add" className="App-link">Add a Package</NavLink>
+                &nbsp;&nbsp;&nbsp;
+                <NavLink exact to='/logout' onClick={this.handleLogout}>LOGOUT</NavLink>
+                &nbsp;&nbsp;&nbsp;
+              </div>
+              :
+              <div className="App-links">
+                  <NavLink exact to='/signup' className="App-link">SIGNUP</NavLink>
+                  &nbsp;&nbsp;&nbsp;
+                  <NavLink exact to='/' className="App-link">LOGIN</NavLink>
+                  &nbsp;&nbsp;&nbsp;
+              </div>
+            }
+          </div>
           <Switch>
             <Route exact path='/signup' render={({ history }) =>
                 <SignupPage history={history} handleSignupOrLogin={this.handleSignupOrLogin} />

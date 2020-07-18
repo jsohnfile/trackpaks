@@ -4,3 +4,7 @@
     align-items: center;
     justify-content: center;
 }
+
+.AccountPage-header {
+    font-size: 30px;
+}

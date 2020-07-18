@@ -40,7 +40,7 @@ class AddPackagePage extends Component {
                         />
                     </div>
                     <div className="form-group">
-                        <label>Courier Service</label>
+                        <label>Carrier Service</label>
                         <select
                             className="form-control"
                             name="carrier"
@@ -48,7 +48,7 @@ class AddPackagePage extends Component {
                             onChange={this.handleChange}
                             required
                         >
-                        <option>Choose a Courier</option>
+                        <option>Select a Carrier</option>
                         <option value="ups">UPS</option>
                         <option value="usps">USPS</option>
                         <option value="fedex">FedEx</option>

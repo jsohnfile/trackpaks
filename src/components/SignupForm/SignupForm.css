@@ -1,0 +1,9 @@
+.SignupForm-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+}
+.SignupForm-container {
+    height: 100%;
+}

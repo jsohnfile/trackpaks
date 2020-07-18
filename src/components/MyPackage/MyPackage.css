@@ -42,3 +42,7 @@
     font-size: 30px;
     font-weight: bold;
 }
+
+.MyPackage-details {
+    width: 100%;
+}

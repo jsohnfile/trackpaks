@@ -23,7 +23,7 @@ class MyPackage extends Component {
     }
     componentDidMount() {
         this.getDetails();
-        this.refreshDetailId = setInterval(this.getDetails, 500000)
+        // this.refreshDetailId = setInterval(this.getDetails, 1000000)
     }
 
     render() {
@@ -40,12 +40,12 @@ class MyPackage extends Component {
                 <div className='MyPackage-content' style={this.state.isCollapsed ? {"display":"none"} : {"display":"block"}}>
                 <p>Carrier: {this.props.myPackage.carrier.toUpperCase()}</p>
                 <p>Tracking Number: {this.props.myPackage.trackingNumber}</p>
-                <p>Status: {this.state.details !== null? this.state.details.tracking_status.status : "pending"}</p>
+                <p>Status: {this.state.details !== null? <em>{this.state.details.tracking_status.status}</em> : "pending"}</p>
                 {this.state.details !== null? `ETA: ${this.state.details.eta} ${this.state.details.eta > this.state.details.original_eta? "Delayed" : "On Time"}`: ""}
                 <div>
                     {this.state.details !== null?  
                     this.state.details.tracking_history.reverse().map(trackDetail => 
-                        <div>
+                        <div className="MyPackage-detail">
                             <div className="MyPackage-divider">|</div>
                             <PackageDetail key={trackDetail._id} trackDetail={trackDetail} />
                         </div>

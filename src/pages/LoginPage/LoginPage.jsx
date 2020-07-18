@@ -35,8 +35,8 @@ class LoginPage extends Component {
     return (
       <div className="LoginPage">
         <header className="header-footer">
-          <h1>About</h1>
-          <p>TrackPaks is a one-stop shop to manage all your packages with tracking information. Get alerts on delivery and exceptions for your pending packages</p>
+          <h1>Welcome to TrackPaks</h1>
+          <p className="LoginPage-message">TrackPaks is a one-stop shop to monitor and store your pending packages. Life can't get any easier. Start using your TrackPaks app today!</p>
         </header>
         <div className="LoginPage-form-container">
           <h2 className="LoginPage-form-header">Log In</h2>
@@ -54,7 +54,6 @@ class LoginPage extends Component {
             <div className="form-group">
               <div className="col-sm-12 text-center">
                 <button className="btn btn-default">Log In</button>&nbsp;&nbsp;&nbsp;
-                <Link to='/'>Cancel</Link>
               </div>
             </div>
           </form>
