@@ -13,7 +13,7 @@
 
 .App-header {
   background-color: blue;
-  min-height: 15vh;
+  min-height: 10vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -36,17 +36,18 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 250px;
+  width: 300px;
   position: fixed;
   z-index: 1;
   top: auto;
   /* right: 20; */
   padding-top: 15px;
-  background-color: rgba(146, 163, 240, 0.8);
+  background-image: radial-gradient( rgba(146, 163, 240, 0.8), rgba(205, 229, 247, .8));
   box-shadow: 8px 3px 7px black;
+  border: 1px solid white;
 }
 
-.App a {
+.App .sidebar a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
@@ -54,9 +55,11 @@
   display: block;
   transition: 0.3s;
   text-shadow: 0px 3px 3px black;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.App a:hover {
+.App .sidebar a:hover {
   color: black;
   text-shadow: 0px 3px 3px gray;
 }
@@ -70,6 +73,11 @@
   color: white;
   text-shadow: 0px 3px 3px black;
   box-shadow: 3px 3px 3px black;
+  font-weight: bold;
+}
+
+.App .closebtn:hover {
+  background-color: rgb(139, 139, 209);
 }
 
 .App .closebtn-container {
@@ -83,7 +91,7 @@
   cursor: pointer;
   background-color: transparent;
   color: white;
-  padding: 10px 15px;
+  /* padding: 10px 15px; */
   border: 2px solid white;
   border-radius: 25px;
   box-shadow: 2px 5px 5px black;
@@ -96,4 +104,19 @@
 .App .welcome-user {
   font-size: 30px;
   color: white;
+  text-shadow: 0 3px 3px black;
+  font-weight: bold;
+}
+
+.App-nav-package-num {
+  border-radius: 50px;
+  border: 1px solid black;
+  width: 30px;
+  background-color: blue;
+}
+
+.account-link-container{
+  display: flex;
+  flex-wrap: wrap;
+
 }

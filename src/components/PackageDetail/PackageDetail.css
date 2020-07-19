@@ -4,16 +4,20 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    border: 2px solid black;
-    padding: 5px;
+    border: 2px solid white;
+    padding: 20px;
+    box-shadow: 0 5px 5px black;
+    border-radius: 50px;
 }
 
 .PackageDetail-date {
     width: 50%;
+    margin-bottom: 20px;
 }
 
 .PackageDetail-location {
     width: 50%;
+    margin-bottom: 20px;
 }
 
 .PackageDetail-details {

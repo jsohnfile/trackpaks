@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch, NavLink, Redirect } from 'react-router-dom';
 import './App.css';
 
+import TrackAPackagePage from '../pages/TrackAPackagePage/TrackAPackagePage';
 import AddPackagePage from '../pages/AddPackagePage/AddPackagePage';
 import EditPackagePage from '../pages/EditPackagePage/EditPackagePage';
 import AccountPage from '../pages/AccountPage/AccountPage';
@@ -84,11 +85,18 @@ class App extends Component {
               <div className="App-links">
               <p className="welcome-user">{userService.getUser().name ? `WELCOME, ${userService.getUser().name.toUpperCase()}` : ''}</p>
                 &nbsp;&nbsp;&nbsp;
-                <NavLink exact to="/account" className="App-link">My Account</NavLink>
+                <div className="account-link-container">
+                  <NavLink exact to="/account" className="account-link-container">
+                  <div>My Account</div>
+                  <div className="App-nav-package-num">{this.state.packages.length}</div>
+                  </NavLink>
+                </div>
                 &nbsp;&nbsp;&nbsp;
                 <NavLink exact to="/add" className="App-link">Add a Package</NavLink>
                 &nbsp;&nbsp;&nbsp;
-                <NavLink exact to='/logout' onClick={this.handleLogout}>LOGOUT</NavLink>
+                <NavLink exact to='/logout' className="App-link" onClick={this.handleLogout}>LOGOUT</NavLink>
+                &nbsp;&nbsp;&nbsp;
+                <NavLink exact to='/track' className="App-link">Track A Package</NavLink>
                 &nbsp;&nbsp;&nbsp;
               </div>
               :
@@ -122,6 +130,12 @@ class App extends Component {
             <Route exact path='/edit' render={({history, location}) =>
               userService.getUser() ?
                 <EditPackagePage handleUpdatePackage={this.handleUpdatePackage} location={location}/>
+                :
+                <Redirect to='/login' />
+            } />
+             <Route exact path='/track' render={() =>
+              userService.getUser() ?
+                <TrackAPackagePage />
                 :
                 <Redirect to='/login' />
             } />

@@ -30,10 +30,10 @@ class MyPackage extends Component {
         return (
             <div className="MyPackage-container">
                 <button type="button" className="MyPackage-collapsible" 
-                    style={this.state.isCollapsed ? {"borderRadius":"25px"} : {"borderRadius":"25px 25px 0px 0px","backgroundColor":"#ccc"}}
+                    style={this.state.isCollapsed ? {"borderRadius":"25px"} : {"borderRadius":"25px 25px 0px 0px","backgroundColor":"rgba(46, 103, 226, 0.8)"}}
                     onClick={this.collapseDetails}
                 >
-                    <div>{this.props.myPackage.name}</div>
+                    <div className="MyPackage-name">{this.props.myPackage.name}</div>
                     <div>{this.state.details !== null ? `Status: ${this.state.details.tracking_status.status}`: "...loading"}</div>
                     <div className="marker">{this.state.isCollapsed ? "+" : "-"}</div>
                 </button>
@@ -41,7 +41,7 @@ class MyPackage extends Component {
                 <p>Carrier: {this.props.myPackage.carrier.toUpperCase()}</p>
                 <p>Tracking Number: {this.props.myPackage.trackingNumber}</p>
                 <p>Status: {this.state.details !== null? <em>{this.state.details.tracking_status.status}</em> : "pending"}</p>
-                {this.state.details !== null? `ETA: ${this.state.details.eta} ${this.state.details.eta > this.state.details.original_eta? "Delayed" : "On Time"}`: ""}
+                {this.state.details !== null && this.state.details.eta !== null? `ETA: ${this.state.details.eta} ${this.state.details.eta > this.state.details.original_eta? "Delayed" : "On Time"}`: ""}
                 <div>
                     {this.state.details !== null?  
                     this.state.details.tracking_history.reverse().map(trackDetail => 
@@ -58,12 +58,12 @@ class MyPackage extends Component {
                 </div>
                     
                     <button
-                        className='MyPackage-delete-btn'
+                        className='MyPackage-btn'
                         onClick={() => this.props.handleDeletePackage(this.props.myPackage._id)}
                     >
                         DELETE
                     </button>
-                    <button> <Link className='edit button' to={{ pathname: '/edit', state: {myPackage: this.props.myPackage}  }}>EDIT</Link></button>
+                    <button className="MyPackage-btn"> <Link className='edit button' to={{ pathname: '/edit', state: {myPackage: this.props.myPackage}  }}>EDIT</Link></button>
                 </div>
     
                 

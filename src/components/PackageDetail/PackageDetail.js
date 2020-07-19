@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './PackageDetail.css'
 
 function PackageDetail(props) {
@@ -13,7 +13,7 @@ function PackageDetail(props) {
                 : ""}
             </div>
             <div className="PackageDetail-details">
-                -- {props.trackDetail.status_details} --
+                {props.trackDetail.status_details}
             </div>
 
         </div>

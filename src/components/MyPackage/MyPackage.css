@@ -1,13 +1,13 @@
 .MyPackage-container {
-    border: 2px solid black;
-    border-radius: 25px;
+    
     width: 60%;
     margin: 20px;
 }
 
 .MyPackage-collapsible {
-    background-color: #eee;
-    color: #444;
+    background-color: blue ;
+    color: white;
+    text-shadow: 0 3px 3px black;
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -19,6 +19,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    border: 2px solid white;
+    box-shadow: 0 5px 5px black;
+    font-weight: bold;
 }
 
 .marker {
@@ -27,15 +30,20 @@
 }
 
 .MyPackage-collapsible:active, .MyPackage-collapsible:hover {
-    background-color: #ccc;
+    background-color: rgba(46, 103, 226, 0.8);
 }
 
 .MyPackage-content {
     padding: 0 18px;
     overflow: hidden;
-    background-color: #f1f1f1;
+    background-color: rgba(146, 163, 240, 0.8);
     transition: 0.2s ease-out;
     border-radius: 0px 0px 25px 25px;
+    border: 2px solid white;
+    box-shadow: 0 5px 5px black;
+    color: black;
+    /* text-shadow: 0 3px 3px white; */
+    font-weight: bold;
 }
 
 .MyPackage-divider {
@@ -45,4 +53,22 @@
 
 .MyPackage-details {
     width: 100%;
+}
+
+.MyPackage-btn {
+    margin: 10px;
+    font-size: 20px;
+    border: 2px solid white;
+    box-shadow: 0 5px 5px black;
+    color: white;
+    text-shadow: 0 3px 3px black;
+    background-color: transparent;
+    padding: 5px;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.MyPackage-name {
+    font-size: 20px;
 }
