@@ -83,21 +83,15 @@ class App extends Component {
             <div className="closebtn-container" ><button className="closebtn" onClick={this.handleMenuClick}>X</button></div>
             {userService.getUser() ?
               <div className="App-links">
-              <p className="welcome-user">{userService.getUser().name ? `WELCOME, ${userService.getUser().name.toUpperCase()}` : ''}</p>
-                &nbsp;&nbsp;&nbsp;
-                <div className="account-link-container">
-                  <NavLink exact to="/account" className="account-link-container">
-                  <div>My Account</div>
-                  <div className="App-nav-package-num">{this.state.packages.length}</div>
-                  </NavLink>
-                </div>
-                &nbsp;&nbsp;&nbsp;
-                <NavLink exact to="/add" className="App-link">Add a Package</NavLink>
-                &nbsp;&nbsp;&nbsp;
-                <NavLink exact to='/logout' className="App-link" onClick={this.handleLogout}>LOGOUT</NavLink>
-                &nbsp;&nbsp;&nbsp;
-                <NavLink exact to='/track' className="App-link">Track A Package</NavLink>
-                &nbsp;&nbsp;&nbsp;
+                <p className="welcome-user">{userService.getUser().name ? `WELCOME, ${userService.getUser().name.charAt(0).toUpperCase()}${userService.getUser().name.slice(1)}` : ''}</p>
+                  &nbsp;&nbsp;&nbsp;
+                <p><NavLink exact to="/account" className="account-link-container">MY ACCOUNT</NavLink></p> 
+                  &nbsp;&nbsp;&nbsp;
+                <p><NavLink exact to="/add" className="App-link">ADD A PACKAGE</NavLink></p> 
+                  &nbsp;&nbsp;&nbsp;
+                <p><NavLink exact to='/track' className="App-link">QUICK TRACK</NavLink></p> 
+                  &nbsp;&nbsp;&nbsp;
+                <p><NavLink exact to='/logout' className="App-link" onClick={this.handleLogout}>LOGOUT</NavLink></p> 
               </div>
               :
               <div className="App-links">
@@ -108,6 +102,7 @@ class App extends Component {
               </div>
             }
           </div>
+          <div className="content">
           <Switch>
             <Route exact path='/signup' render={({ history }) =>
                 <SignupPage history={history} handleSignupOrLogin={this.handleSignupOrLogin} />
@@ -141,6 +136,7 @@ class App extends Component {
             } />
   
           </Switch>
+          </div>
         </main>
       </div>
     );

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "./AddPackagePage.css";
 
 class AddPackagePage extends Component {
     state = {
@@ -26,23 +27,24 @@ class AddPackagePage extends Component {
 
     render() {
         return (
-            <>
-                <h1>Add a Package</h1>
-                <form onSubmit={this.handleSubmit}>
+            <div className="AddPackagePage-container">
+                <form className="AddPackagePage-form-container" onSubmit={this.handleSubmit}>
+                    <h1>Add a Package</h1>
                     <div className="form-group">
-                        <label>Package Name (required)</label>
+                        {/* <label>Package Name (required)</label> */}
                         <input
                             className="form-control"
                             name="name"
+                            placeholder="Package Name"
                             value={this.state.formData.name}
                             onChange={this.handleChange}
                             required
                         />
                     </div>
                     <div className="form-group">
-                        <label>Carrier Service</label>
+                        {/* <label>Carrier Service</label> */}
                         <select
-                            className="form-control"
+                            className="AddPackagePage-select"
                             name="carrier"
                             value={this.state.formData.carrier}
                             onChange={this.handleChange}
@@ -57,10 +59,11 @@ class AddPackagePage extends Component {
                         </select>
                     </div>
                     <div className="form-group">
-                        <label>Tracking Number (required)</label>
+                        {/* <label>Tracking Number (required)</label> */}
                         <input
                             className="form-control"
                             name="trackingNumber"
+                            placeholder="Tracking Number"
                             value={this.state.formData.trackingNumber}
                             onChange={this.handleChange}
                             required
@@ -68,12 +71,12 @@ class AddPackagePage extends Component {
                     </div>
                     <button
                         type="submit"
-                        className="btn"
+                        className="AddPackagePage-btn"
                     >
                         ADD Package
                     </button>
                 </form>
-            </>
+            </div>
         );
     }
 }

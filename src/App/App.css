@@ -9,17 +9,20 @@
 
 .App-trackpaks {
   height: 50px;
+  margin-right: 30px;
 }
 
 .App-header {
-  background-color: blue;
   min-height: 10vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: calc(10px + 2vmin);
   color: white;
-  padding: 0 20px;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .App-link {
@@ -39,8 +42,7 @@
   width: 300px;
   position: fixed;
   z-index: 1;
-  top: auto;
-  /* right: 20; */
+  top: 0;
   padding-top: 15px;
   background-image: radial-gradient( rgba(146, 163, 240, 0.8), rgba(205, 229, 247, .8));
   box-shadow: 8px 3px 7px black;
@@ -48,15 +50,16 @@
 }
 
 .App .sidebar a {
-  padding: 8px 8px 8px 32px;
+  padding: 8px 8px 8px 8px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 22px;
   color: white;
   display: block;
-  transition: 0.3s;
+  transition: 0.4s;
   text-shadow: 0px 3px 3px black;
   font-weight: bold;
   cursor: pointer;
+  width: 100%;
 }
 
 .App .sidebar a:hover {
@@ -91,10 +94,11 @@
   cursor: pointer;
   background-color: transparent;
   color: white;
-  /* padding: 10px 15px; */
+  padding: 2px 0 0 4px;
   border: 2px solid white;
   border-radius: 25px;
   box-shadow: 2px 5px 5px black;
+  outline: none;
 }
 
 .App .openbtn:hover {
@@ -106,17 +110,34 @@
   color: white;
   text-shadow: 0 3px 3px black;
   font-weight: bold;
+  margin: 60px 0;
 }
 
 .App-nav-package-num {
   border-radius: 50px;
   border: 1px solid black;
-  width: 30px;
+  width: 25%;
   background-color: blue;
 }
 
 .account-link-container{
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 
+}
+
+#myaccount-text {
+  width: 75%;
+}
+
+.App .content {
+  height: 100%;
+  margin-top: 175px;;
+  
+}
+
+.App main {
+  height: 100%;
 }

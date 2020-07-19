@@ -1,0 +1,50 @@
+.Track-container {
+    
+    width: 60%;
+    margin: 20px;
+}
+
+.marker {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.Track-content {
+    padding: 0 18px;
+    overflow: hidden;
+    background-color: rgba(146, 163, 240, 0.8);
+    transition: 0.2s ease-out;
+    border-radius: 25px;
+    border: 2px solid white;
+    box-shadow: 0 5px 5px black;
+    color: black;
+    /* text-shadow: 0 3px 3px white; */
+    font-weight: bold;
+}
+
+.Track-divider {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.Track-details {
+    width: 100%;
+}
+
+.Track-btn {
+    margin: 10px;
+    font-size: 20px;
+    border: 2px solid white;
+    box-shadow: 0 5px 5px black;
+    color: white;
+    text-shadow: 0 3px 3px black;
+    background-color: transparent;
+    padding: 5px;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.Track-name {
+    font-size: 20px;
+}

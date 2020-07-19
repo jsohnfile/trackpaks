@@ -58,7 +58,7 @@ class TrackingForm extends Component {
                     </div>
                     <button
                         type="submit"
-                        className="btn"
+                        className="track-btn"
                     >
                         TRACK
                     </button>

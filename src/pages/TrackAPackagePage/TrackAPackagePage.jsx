@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import "./TrackAPackagePage.css"
 import TrackingForm from "../../components/TrackingForm/TrackingForm"
-import MyPackage from '../../components/MyPackage/MyPackage';
+import Track from '../../components/Track/Track';
 
 class TrackAPackagePage extends Component {
     state = {
@@ -30,7 +30,7 @@ class TrackAPackagePage extends Component {
                 <h1>Track a Package</h1>
                 <TrackingForm handleTrackPackage={this.handleTrackPackage}/>
                     {this.state.myPackage.carrier ?
-                        <MyPackage myPackage={this.state.myPackage} />
+                        <Track myPackage={this.state.myPackage} />
                         :
                         ""}
             </div>

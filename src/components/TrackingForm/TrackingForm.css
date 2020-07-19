@@ -1,5 +1,16 @@
 .track-form {
     display: flex;
     flex-wrap: wrap;
-    
+    justify-content: center;
+    align-items: center;
+}
+
+.carrier-select {
+    font-size: 20px;
+    padding: 4px;
+}
+
+.track-btn {
+    font-size: 20px;
+    padding: 4px;
 }
