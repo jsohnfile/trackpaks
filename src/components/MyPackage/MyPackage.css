@@ -1,6 +1,6 @@
 .MyPackage-container {
     
-    width: 90%;
+    width: 100%;
     max-width: 650px;
     margin: 20px;
     display: flex;
@@ -41,7 +41,6 @@
 }
 
 .MyPackage-content {
-    padding: 30px 18px;
     overflow: hidden;
     /* background-color: rgba(146, 163, 240, 0.8); */
     background-color: rgb(221, 226, 235);
@@ -52,6 +51,8 @@
     color: black;
     /* text-shadow: 0 3px 3px white; */
     font-weight: bold;
+    width: 100%;
+
 
     
 }
@@ -73,7 +74,7 @@
     box-shadow: 0 5px 5px black;
     color: white;
     text-shadow: 0 3px 3px black;
-    background-color: transparent;
+    background-color: rgb(131, 149, 176);
     padding: 5px;
     border-radius: 8px;
     text-decoration: none;
@@ -86,6 +87,7 @@
 }
 
 .track-div {
+    display: none;
     width: 30px;
     height: 30px;
     border-radius: 50px;
@@ -95,9 +97,11 @@
 
 .line {
     width: 200px;
+    display: none;
 } 
 
 .icon-container {
+    display: none;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -107,6 +111,7 @@
 }
 
 .transit-location-container {
+    display: none;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -116,9 +121,11 @@
 
 .transit-location {
     width: 33.3%;
+    display: none;
 }
 
 .spacer-container {
+    display: none;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -128,4 +135,22 @@
     text-decoration: none;
     color: white;
 
+}
+
+.attr-detail {
+    width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+    .icon-container, .space-container, .transit-location, .transit-location-container, .track-div {
+        display: flex;
+    }
+
+    .line {
+        display: block;
+    }
+
+    .MyPackage-content {
+        padding: 30px 18px;
+    }
 }

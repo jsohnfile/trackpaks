@@ -71,9 +71,9 @@ class MyPackage extends Component {
                 </div>
 
 
-                <p>Carrier: {this.props.myPackage.carrier.toUpperCase()}</p>
-                <p>Tracking Number: {this.props.myPackage.trackingNumber}</p>
-                <p>Status: {this.state.details !== null? this.state.details.tracking_status === null ? "Invalid Tracking Number" : <em style={this.state.details.tracking_status.status === "DELIVERED" ? {"color": "blue"}: {"":""}}>{this.state.details.tracking_status.status}</em>: "...loading"}</p>
+                <p className="attr-detail">Carrier: {this.props.myPackage.carrier.toUpperCase()}</p>
+                <p className="attr-detail">Tracking Number: {this.props.myPackage.trackingNumber}</p>
+                <p className="attr-detail">Status: {this.state.details !== null? this.state.details.tracking_status === null ? "Invalid Tracking Number" : <em style={this.state.details.tracking_status.status === "DELIVERED" ? {"color": "blue"}: {"":""}}>{this.state.details.tracking_status.status}</em>: "...loading"}</p>
                 {this.state.details !== null && this.state.details.eta !== null? `ETA: ${this.state.details.eta} ${this.state.details.eta > this.state.details.original_eta? "Delayed" : "On Time"}`: ""}
                 <div>
                     {this.state.details!== null? this.state.details.tracking_history === null ? "" :
