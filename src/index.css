@@ -5,13 +5,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(221, 226, 235);
 }
 
 html {
   width: 100vw;
   height: 100vh;
-  background-image: linear-gradient(to bottom, blue, rgb(55, 36, 230), rgb(89, 72, 236), rgb(180, 179, 253));
-  background-position: no-repeat cover;
+
 }
 
 code {
@@ -23,6 +23,12 @@ input {
   padding: 5px;
   font-size: 20px;
   border-radius: 5px;
-  border: 2px solid white;
+  border: 2px solid lightgrey;
   box-shadow: 0 5px 5px black;
+  outline: none;
 }
+
+button, a, select {
+  outline: none;
+}
+

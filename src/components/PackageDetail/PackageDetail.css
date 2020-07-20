@@ -8,6 +8,7 @@
     padding: 20px;
     box-shadow: 0 5px 5px black;
     border-radius: 50px;
+    border: 2px solid black;
 }
 
 .PackageDetail-date {

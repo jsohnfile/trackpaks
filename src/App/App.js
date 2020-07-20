@@ -73,8 +73,8 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
         <div id="navbar">
-          <button className="openbtn" onClick={this.handleMenuClick}><img className="App-logo" src="https://i.imgur.com/3fuPdBZ.png" /></button>
-          <img className="App-trackpaks" src="https://i.imgur.com/X43Rqme.png" />
+          <button className="openbtn" onClick={this.handleMenuClick}><img className="App-logo" src="https://i.imgur.com/6ip1UVz.png" /></button>
+          <div className="App-trackpaks">TrackPaks</div>
         </div>
         </header>
         <main>
@@ -94,7 +94,7 @@ class App extends Component {
                 <p><NavLink exact to='/logout' className="App-link" onClick={this.handleLogout}>LOGOUT</NavLink></p> 
               </div>
               :
-              <div className="App-links">
+              <div className="App-links" id="signup-login">
                   <NavLink exact to='/signup' className="App-link">SIGNUP</NavLink>
                   &nbsp;&nbsp;&nbsp;
                   <NavLink exact to='/' className="App-link">LOGIN</NavLink>
@@ -138,6 +138,9 @@ class App extends Component {
           </Switch>
           </div>
         </main>
+        <footer>
+          trackpaks copyright jsohnfile
+        </footer>
       </div>
     );
   }

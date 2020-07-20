@@ -1,16 +1,22 @@
 .MyPackage-container {
     
-    width: 60%;
+    width: 90%;
+    max-width: 650px;
     margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .MyPackage-collapsible {
-    background-color: blue ;
+    background-color: rgb(131, 149, 176);
     color: white;
     text-shadow: 0 3px 3px black;
     cursor: pointer;
     padding: 18px;
     width: 100%;
+    max-width: 650px;
     border: none;
     text-align: left;
     outline: none;
@@ -19,6 +25,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
     border: 2px solid white;
     box-shadow: 0 5px 5px black;
     font-weight: bold;
@@ -30,13 +37,14 @@
 }
 
 .MyPackage-collapsible:active, .MyPackage-collapsible:hover {
-    background-color: rgba(46, 103, 226, 0.8);
+    background-color: rgb(88, 111, 146);
 }
 
 .MyPackage-content {
-    padding: 0 18px;
+    padding: 30px 18px;
     overflow: hidden;
-    background-color: rgba(146, 163, 240, 0.8);
+    /* background-color: rgba(146, 163, 240, 0.8); */
+    background-color: rgb(221, 226, 235);
     transition: 0.2s ease-out;
     border-radius: 0px 0px 25px 25px;
     border: 2px solid white;
@@ -44,6 +52,8 @@
     color: black;
     /* text-shadow: 0 3px 3px white; */
     font-weight: bold;
+
+    
 }
 
 .MyPackage-divider {
@@ -53,6 +63,7 @@
 
 .MyPackage-details {
     width: 100%;
+
 }
 
 .MyPackage-btn {
@@ -67,8 +78,54 @@
     border-radius: 8px;
     text-decoration: none;
     cursor: pointer;
+    font-weight: bold;
 }
 
 .MyPackage-name {
     font-size: 20px;
+}
+
+.track-div {
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    border: 2px solid black;
+    margin: 10px;
+}
+
+.line {
+    width: 200px;
+} 
+
+.icon-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.transit-location-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.transit-location {
+    width: 33.3%;
+}
+
+.spacer-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.edit-button {
+    text-decoration: none;
+    color: white;
+
 }

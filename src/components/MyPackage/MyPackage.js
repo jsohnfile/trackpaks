@@ -30,20 +30,53 @@ class MyPackage extends Component {
         return (
             <div className="MyPackage-container">
                 <button type="button" className="MyPackage-collapsible" 
-                    style={this.state.isCollapsed ? {"borderRadius":"25px"} : {"borderRadius":"25px 25px 0px 0px","backgroundColor":"rgba(46, 103, 226, 0.8)"}}
+                    style={this.state.isCollapsed ? {"borderRadius":"25px"} : {"borderRadius":"25px 25px 0px 0px","backgroundColor":"rgb(88, 111, 146)"}}
                     onClick={this.collapseDetails}
                 >
                     <div className="MyPackage-name">{this.props.myPackage.name}</div>
-                    <div>{this.state.details !== null ? `Status: ${this.state.details.tracking_status.status}`: "...loading"}</div>
+                    <div>Status: {this.state.details !== null? this.state.details.tracking_status === null || this.state.details === null ? "Invalid Tracking Number or Information is currently not available" : <em style={this.state.details.tracking_status.status === "DELIVERED" ? {"color": "white", "textShadow": "1px 3px 3px blue"}: {"":""}}>{this.state.details.tracking_status.status}</em> : "...loading"}</div>
                     <div className="marker">{this.state.isCollapsed ? "+" : "-"}</div>
                 </button>
                 <div className='MyPackage-content' style={this.state.isCollapsed ? {"display":"none"} : {"display":"block"}}>
+                {this.state.details !== null?
+                    <div className="icon-container">
+                        {this.state.details.tracking_status === null ? "" : <div className="track-div" style={this.state.details.tracking_status.status === "PRE_TRANSIT" ? {"backgroundColor": "blue"}:  {"":""}}></div>}
+                        <div className="line">&nbsp;<hr></hr> &nbsp;</div>
+                        {this.state.details.tracking_status === null ? "" : <div className="track-div" style={this.state.details.tracking_status.status === "TRANSIT" ? {"backgroundColor": "blue"}:  {"":""}}></div>}
+                        <div className="line">&nbsp; <hr></hr> &nbsp;</div>
+                        {this.state.details.tracking_status === null ? "" : <div className="track-div" style={this.state.details.tracking_status.status === "DELIVERED" ? {"backgroundColor": "blue"}: {"":""}}></div>}
+
+                    </div>
+                    :
+                    ""
+                }
+                <div className="spacer-container">
+                    <div className="transit-location-container">
+                        <div className="transit-location">
+                            {this.state.details !== null && this.state.details.address_from!== null? 
+                            (`${this.state.details.address_from.city}, ${this.state.details.address_from.state === "" ? this.state.details.address_from.country: this.state.details.address_from.state}`)
+                            : ""}
+                        </div>
+                        <div className="transit-location">
+                            {this.state.details !== null && this.state.details.address_from!== null? 
+                            "Transit"
+                            : ""}
+                        </div>
+                        <div className="transit-location">
+                            {this.state.details !== null && this.state.details.address_to!== null? 
+                            (`${this.state.details.address_to.city}, ${this.state.details.address_to.state === "" ? this.state.details.address_to.country: this.state.details.address_to.state}`)
+                            : ""}
+                        </div>
+                    </div>
+                </div>
+
+
                 <p>Carrier: {this.props.myPackage.carrier.toUpperCase()}</p>
                 <p>Tracking Number: {this.props.myPackage.trackingNumber}</p>
-                <p>Status: {this.state.details !== null? <em>{this.state.details.tracking_status.status}</em> : "pending"}</p>
+                <p>Status: {this.state.details !== null? this.state.details.tracking_status === null ? "Invalid Tracking Number" : <em style={this.state.details.tracking_status.status === "DELIVERED" ? {"color": "blue"}: {"":""}}>{this.state.details.tracking_status.status}</em>: "...loading"}</p>
                 {this.state.details !== null && this.state.details.eta !== null? `ETA: ${this.state.details.eta} ${this.state.details.eta > this.state.details.original_eta? "Delayed" : "On Time"}`: ""}
                 <div>
-                    {this.state.details !== null?  
+                    {this.state.details!== null? this.state.details.tracking_history === null ? "" :
                     this.state.details.tracking_history.reverse().map(trackDetail => 
                         <div className="MyPackage-detail">
                             <div className="MyPackage-divider">|</div>
@@ -63,7 +96,7 @@ class MyPackage extends Component {
                     >
                         DELETE
                     </button>
-                    <button className="MyPackage-btn"> <Link className='edit button' to={{ pathname: '/edit', state: {myPackage: this.props.myPackage}  }}>EDIT</Link></button>
+                    <button className="MyPackage-btn"> <Link className='edit-button' to={{ pathname: '/edit', state: {myPackage: this.props.myPackage}  }}>EDIT</Link></button>
                 </div>
     
                 

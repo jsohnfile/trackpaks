@@ -6,7 +6,7 @@ import './AccountPage.css';
 function AccountPage(props) {
     return (
         <div className="AccountPage-container">
-            <h1 className="AccountPage-header">{`${props.user.name.charAt(0).toUpperCase()}${props.user.name.slice(1)}'s`} Account Page</h1>
+            <h1 className="AccountPage-header">{`${props.user.name.charAt(0).toUpperCase()}${props.user.name.slice(1)}'s`} Account</h1>
             <div className="AccountPage-packages">
                 {props.packages.length ? props.packages.map(myPackage => 
                     <MyPackage 

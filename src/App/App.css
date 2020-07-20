@@ -8,21 +8,25 @@
 }
 
 .App-trackpaks {
-  height: 50px;
-  margin-right: 30px;
+  font-size: 30px;
+  padding-right: 40px;
+  text-shadow: 2px 2px 0px black;
+  font-weight: bold;
+  color: white;
 }
 
 .App-header {
-  min-height: 10vh;
+  min-height: 8vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: calc(10px + 2vmin);
-  color: white;
   padding: 20px;
   position: fixed;
   top: 0;
   width: 100%;
+  box-shadow: 0 5px 5px black;
+  background-color: rgb(88, 111, 146);
 }
 
 .App-link {
@@ -32,6 +36,7 @@
 .App #navbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
 }
 
@@ -39,12 +44,12 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 300px;
+  width: 250px;
   position: fixed;
   z-index: 1;
   top: 0;
   padding-top: 15px;
-  background-image: radial-gradient( rgba(146, 163, 240, 0.8), rgba(205, 229, 247, .8));
+  background-image: radial-gradient( rgba(177, 189, 245, 0.8), rgba(221, 226, 235));
   box-shadow: 8px 3px 7px black;
   border: 1px solid white;
 }
@@ -53,18 +58,18 @@
   padding: 8px 8px 8px 8px;
   text-decoration: none;
   font-size: 22px;
-  color: white;
+  color: rgb(88, 111, 146);
   display: block;
   transition: 0.4s;
-  text-shadow: 0px 3px 3px black;
+  text-shadow: 0px 3px 3px white;
   font-weight: bold;
   cursor: pointer;
   width: 100%;
 }
 
 .App .sidebar a:hover {
-  color: black;
-  text-shadow: 0px 3px 3px gray;
+  color: white;
+  text-shadow: 0px 3px 3px black;
 }
 
 .App .closebtn {
@@ -92,25 +97,25 @@
 .App .openbtn {
   font-size: 20px;
   cursor: pointer;
-  background-color: transparent;
+  background-color: white;
   color: white;
   padding: 2px 0 0 4px;
-  border: 2px solid white;
+  border: 2px solid rgb(131, 149, 176);
   border-radius: 25px;
   box-shadow: 2px 5px 5px black;
   outline: none;
 }
 
 .App .openbtn:hover {
-  background-color: rgb(68, 65, 255);
+  background-color: rgb(221, 226, 235);;
 }
 
 .App .welcome-user {
   font-size: 30px;
-  color: white;
-  text-shadow: 0 3px 3px black;
+  color: rgb(88, 111, 146);
+  text-shadow: 0 3px 3px white;;
   font-weight: bold;
-  margin: 60px 0;
+  margin: 100px 0 20px 0;
 }
 
 .App-nav-package-num {
@@ -135,9 +140,27 @@
 .App .content {
   height: 100%;
   margin-top: 175px;;
-  
 }
 
 .App main {
   height: 100%;
+}
+
+.App footer {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  background-color: rgb(88, 111, 146);
+  box-shadow: 0 -5px 5px black;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 3px 3px black;
+}
+
+#signup-login {
+  margin-top: 100px;
 }

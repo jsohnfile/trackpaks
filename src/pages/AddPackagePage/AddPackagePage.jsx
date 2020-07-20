@@ -29,7 +29,7 @@ class AddPackagePage extends Component {
         return (
             <div className="AddPackagePage-container">
                 <form className="AddPackagePage-form-container" onSubmit={this.handleSubmit}>
-                    <h1>Add a Package</h1>
+                    <h1 className="form-header">Add a Package</h1>
                     <div className="form-group">
                         {/* <label>Package Name (required)</label> */}
                         <input

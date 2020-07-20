@@ -20,6 +20,7 @@
     color: black;
     /* text-shadow: 0 3px 3px white; */
     font-weight: bold;
+    margin: 20px 0;
 }
 
 .Track-divider {
@@ -47,4 +48,9 @@
 
 .Track-name {
     font-size: 20px;
+}
+
+.Track select {
+    border: 2px solid black;
+    border-radius: 5px;
 }

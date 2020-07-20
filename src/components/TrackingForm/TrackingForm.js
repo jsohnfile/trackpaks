@@ -28,7 +28,7 @@ class TrackingForm extends Component {
 
     render() {
         return (
-            <div>
+            <div className="Track">
                 <form onSubmit={this.handleSubmit} className="track-form">
                     <div className="form-group">
                         <select

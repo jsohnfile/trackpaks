@@ -26,10 +26,10 @@ class Track extends Component {
                 <div className='Track-content'>
                 <p>Carrier: {this.props.myPackage.carrier.toUpperCase()}</p>
                 <p>Tracking Number: {this.props.myPackage.trackingNumber}</p>
-                <p>Status: {this.state.details !== null? <em>{this.state.details.tracking_status.status}</em> : "pending"}</p>
+                <p>Status: {this.state.details !== null? this.state.details.tracking_status === null ? "Invalid Tracking Number" : <em>{this.state.details.tracking_status.status}</em> : "...loading"}</p>
                 {this.state.details !== null && this.state.details.eta !== null? `ETA: ${this.state.details.eta} ${this.state.details.eta > this.state.details.original_eta? "Delayed" : "On Time"}`: ""}
                 <div>
-                    {this.state.details !== null?  
+                    {this.state.details!== null? this.state.details.tracking_history === null ? "" :
                     this.state.details.tracking_history.reverse().map(trackDetail => 
                         <div className="Track-detail">
                             <div className="Track-divider">|</div>

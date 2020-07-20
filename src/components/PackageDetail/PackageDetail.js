@@ -1,11 +1,20 @@
 import React from 'react';
 import './PackageDetail.css'
 
+function grabDate (date) {
+    let newDate = date.slice(0,9).split("-")
+    let temp = newDate[0];
+    newDate[0] = newDate[1];
+    newDate[1] = newDate[2];
+    newDate[2] = temp;
+    return newDate.join("-")
+}
+
 function PackageDetail(props) {
     return (
         <div className="PackageDetail-container">
             <div className="PackageDetail-date">
-                {props.trackDetail.status_date}
+                {grabDate(props.trackDetail.status_date)}
             </div>
             <div className="PackageDetail-location">
                 {props.trackDetail.location!== null? 

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "./EditPackagePage.css"
 
 class EditPackagePage extends Component {
     state = {
@@ -21,9 +22,9 @@ class EditPackagePage extends Component {
 
     render() {
             return (
-            <>
-                <h1>Edit a Package</h1>
-                <form onSubmit={this.handleSubmit}>
+            <div className="EditPackagePage-container">
+                <form onSubmit={this.handleSubmit} className="EditPackagePage-form-container">
+                    <h1>Edit a Package</h1>
                     <div className="form-group">
                         <label>Package Name (required)</label>
                         <input
@@ -37,7 +38,7 @@ class EditPackagePage extends Component {
                     <div className="form-group">
                         <label>Courier Service</label>
                         <select
-                            className="form-control"
+                            className="EditPackagePage-select"
                             name="carrier"
                             value={this.state.formData.carrier}
                             onChange={this.handleChange}
@@ -62,12 +63,12 @@ class EditPackagePage extends Component {
                     </div>
                     <button
                         type="submit"
-                        className="btn"
+                        className="EditPackagePage-btn"
                     >
                         Save Package
                     </button>
                 </form>
-            </>
+            </div>
         );
     }
 }

@@ -1,23 +1,24 @@
-.AddPackagePage-form-container {
+.EditPackagePage-form-container {
     border: 2px solid black;
     border-radius: 25px;
-    width: 40%;
-    min-width: 250px;
-    max-width: 500px;
-    height: 350px;
+    width: 30%;
+    height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     background: white;
     margin: 10px;
-    background-color: rgb(131, 149, 176);
+    background-image: radial-gradient( rgba(177, 189, 245, 0.8), rgba(221, 226, 235));
     box-shadow: 8px 3px 7px black;
     border: 1px solid white;
+    color: rgb(88, 111, 146);
+    text-shadow: 0 3px 3px lightgrey;
+    font-weight: bold;
 
 }
 
-.AddPackagePage-container {
+.EditPackagePage-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -26,7 +27,7 @@
     
 }
 
-.AddPackagePage-btn {
+.EditPackagePage-btn {
     width: 100px;
     font-size: 15px;
     border: 2px solid white;
@@ -36,10 +37,9 @@
     font-weight: bold;
     color: white;
     text-shadow: 2px 3px 3px black;
-    margin: 20px;
 }
 
-.AddPackagePage-select {
+.EditPackagePage-select {
     padding: 5px;
     font-size: 20px;
     width: 220px;
@@ -49,7 +49,7 @@
 }
 
  .form-header {
-    color: white;
-    text-shadow: 0 3px 3px black;
-    font-weight: bold;
+    color: rgb(131, 149, 176);
+    text-shadow: 0 3px 3px lightgrey;
+     font-weight: bold;
 }

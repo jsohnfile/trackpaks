@@ -3,20 +3,23 @@
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .LoginPage-form-container {
     border: 2px solid black;
     border-radius: 25px;
     width: 30%;
+    min-width: 250px;
+    max-width: 550px;
     height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-image: radial-gradient( rgba(146, 163, 240, 0.8), rgba(205, 229, 247, .8));
+    background-color: rgb(88, 111, 146);
     box-shadow: 8px 3px 7px black;
     border: 1px solid white;
+    margin-bottom: 30px;
 }
 
 .LoginPage-form {
@@ -28,6 +31,8 @@
 
 .LoginPage-form-header {
     margin: 30px 0;
+    color: white;
+    text-shadow: 0 3px 3px black;
 }
 
 .LoginPage-signup-msg {
@@ -36,7 +41,7 @@
 
 .LoginPage-message {
     width: 60%;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 
 .header-footer {
@@ -44,4 +49,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.LoginPage-signup-msg {
+    color: white;
+}
+.LoginPage a {
+    color: rgb(114, 210, 241);
 }
