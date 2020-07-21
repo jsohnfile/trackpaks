@@ -29,21 +29,27 @@ class MyPackage extends Component {
     render() {
         return (
             <div className="MyPackage-container">
-                <button type="button" className="MyPackage-collapsible" 
+                <div className="MyPackage-collapsible" 
                     style={this.state.isCollapsed ? {"borderRadius":"25px"} : {"borderRadius":"25px 25px 0px 0px","backgroundColor":"rgb(88, 111, 146)"}}
                     onClick={this.collapseDetails}
                 >
-                    <div className="MyPackage-name">{this.props.myPackage.name}</div>
-                    <div>Status: {this.state.details !== null? this.state.details.tracking_status === null || this.state.details === null ? "Invalid Tracking Number or Information is currently not available" : <em style={this.state.details.tracking_status.status === "DELIVERED" ? {"color": "white", "textShadow": "1px 3px 3px blue"}: {"":""}}>{this.state.details.tracking_status.status}</em> : "...loading"}</div>
-                    <div className="marker">{this.state.isCollapsed ? "+" : "-"}</div>
-                </button>
+                    <div className="button-container">
+                        <div className="name-status">
+                            <div className="MyPackage-name">{this.props.myPackage.name[0].toUpperCase()}{this.props.myPackage.name.slice(1)}</div>
+                            <div>Status: {this.state.details !== null? this.state.details.tracking_status === null || this.state.details === null ? "Invalid Tracking Number or Information is currently not available" : <em style={this.state.details.tracking_status.status === "DELIVERED" ? {"color": "white", "textShadow": "1px 3px 3px blue"}: {"":""}}>{this.state.details.tracking_status.status}</em> : "...loading"}</div>
+                        </div>
+                        <div className="marker-container">
+                            <div className="marker">{this.state.isCollapsed ? "+" : "-"}</div>
+                        </div>
+                    </div>
+                </div>
                 <div className='MyPackage-content' style={this.state.isCollapsed ? {"display":"none"} : {"display":"block"}}>
                     {this.state.details !== null?
                         <div className="icon-container">
                             {this.state.details.tracking_status === null ? "" : <div className="track-div" style={this.state.details.tracking_status.status === "PRE_TRANSIT" ? {"backgroundColor": "blue"}:  {"":""}}></div>}
-                            <div className="line">&nbsp;<hr></hr> &nbsp;</div>
+                            {this.state.details.tracking_status === null ? "" :<div className="line">&nbsp;<hr></hr> &nbsp;</div>}
                             {this.state.details.tracking_status === null ? "" : <div className="track-div" style={this.state.details.tracking_status.status === "TRANSIT" ? {"backgroundColor": "blue"}:  {"":""}}></div>}
-                            <div className="line">&nbsp; <hr></hr> &nbsp;</div>
+                            {this.state.details.tracking_status === null ? "" :<div className="line">&nbsp; <hr></hr> &nbsp;</div>}
                             {this.state.details.tracking_status === null ? "" : <div className="track-div" style={this.state.details.tracking_status.status === "DELIVERED" ? {"backgroundColor": "blue"}: {"":""}}></div>}
 
                         </div>

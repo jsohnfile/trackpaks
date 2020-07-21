@@ -41,7 +41,7 @@ class SignupForm extends Component {
     return (
       <div className="SignupForm-container">
         <form className="SignupForm-form" onSubmit={this.handleSubmit} >
-          <h2>Sign Up</h2>
+          <p className="header">Sign Up</p>
           <div className="SignupForm-field">
             <input type="text" className="form-control" placeholder="Name" value={this.state.name} name="name" onChange={this.handleChange} />
           </div>
@@ -55,8 +55,8 @@ class SignupForm extends Component {
             <input type="password" className="form-control" placeholder="Confirm Password" value={this.state.passwordConf} name="passwordConf" onChange={this.handleChange} />
           </div>
           <div className="SignupForm-btns">
-            <button className="btn btn-default" disabled={this.isFormInvalid()}>Sign Up</button>&nbsp;&nbsp;
-            <button><Link to='/login'>Cancel</Link></button>
+            <button className="signup-btn" disabled={this.isFormInvalid()}>Sign Up</button>&nbsp;&nbsp;
+            <button className="signup-btn"><Link className="cancel-link" to='/'>Cancel</Link></button>
           </div>
         </form>
       </div>

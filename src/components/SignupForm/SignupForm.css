@@ -7,3 +7,29 @@
 .SignupForm-container {
     height: 100%;
 }
+
+.signup-btn {
+    font-size: 20px;
+    border-radius: 5px;
+    border: 2px solid white;
+    color: white;
+    text-shadow: 0 3px 3px black;
+    background-color: transparent;
+    box-shadow: 0 5px 5px black;
+    text-decoration: none;
+}
+
+.signup-btn:hover {
+    background-color: rgb(88, 111, 146);
+}
+
+.cancel-link {
+    text-decoration: none;
+    color: white;
+    text-shadow: 0 3px 3px black;
+}
+
+.SignupForm .header {
+    font-size: 30px;
+    font-weight: bold;
+}

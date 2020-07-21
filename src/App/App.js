@@ -140,7 +140,8 @@ class App extends Component {
             </div>
         </main>
         <footer>
-          trackpaks copyright jsohnfile
+          <div className="footer-prop">Trackpaks a jsohnfile</div>
+          <a className="footer-prop" href="https://github.com/jsohnfile/trackpaks"><img src="https://i.imgur.com/u8ZIvk4.png"></img></a>
         </footer>
 
         </div>

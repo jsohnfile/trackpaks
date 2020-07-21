@@ -1,5 +1,5 @@
 .MyPackage-container {
-    width: 90vw;
+    width: 90%;;
     max-width: 650px;
     margin: 20px 0;
     display: flex;
@@ -13,8 +13,9 @@
     color: white;
     text-shadow: 0 3px 3px black;
     cursor: pointer;
-    padding: 18px;
+    
     width: 100%;
+    max-width: 650px;
     
     outline: none;
     text-align: left;
@@ -31,8 +32,14 @@
 }
 
 .marker {
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
+}
+
+.marker-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .MyPackage-collapsible:active, .MyPackage-collapsible:hover {
@@ -40,19 +47,19 @@
 }
 
 .MyPackage-content {
-    overflow: hidden;
+    /* overflow: hidden; */
     background-color: rgb(221, 226, 235);
     border-radius: 0px 0px 25px 25px;
     border: 2px solid white;
     box-shadow: 0 5px 5px black;
     color: black;
     font-weight: bold;
-    /* max-width: 650px; */
-    width: 99.5%;
+    width: 100%;
     max-width: 650px;
-    
-    
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
 }
 
 .MyPackage-divider {
@@ -76,7 +83,7 @@
     box-shadow: 0 5px 5px black;
     color: white;
     text-shadow: 0 3px 3px black;
-    background-color: rgb(131, 149, 176);
+    background-color: transparent;
     padding: 5px;
     border-radius: 8px;
     text-decoration: none;
@@ -84,8 +91,14 @@
     font-weight: bold;
 }
 
+.MyPackage-btn:hover {
+    background-color: rgb(131, 149, 176);
+}
+
 .MyPackage-name {
     font-size: 20px;
+    display: flex;
+    margin-bottom: 5px;
 }
 
 .track-div {
@@ -109,7 +122,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin: 50px 0;
+    margin:  10px 0;
 }
 
 .transit-location-container {
@@ -137,13 +150,27 @@
 .edit-button {
     text-decoration: none;
     color: white;
+    text-shadow: 0 3px 3px black;
 
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
 
 
 .details-container {
     width: 100%;
+}
+
+.name-status {
+    padding: 18px;
+}
+.marker-container {
+    padding: 18px;
 }
 
 @media only screen and (min-width: 768px) {

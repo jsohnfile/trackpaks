@@ -23,7 +23,7 @@ input {
   padding: 5px;
   font-size: 20px;
   border-radius: 5px;
-  border: 2px solid lightgrey;
+  border: 2px solid black;
   box-shadow: 0 5px 5px black;
   outline: none;
 }

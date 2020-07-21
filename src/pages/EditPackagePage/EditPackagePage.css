@@ -9,11 +9,11 @@
     align-items: center;
     background: white;
     margin: 10px;
-    background-image: radial-gradient( rgba(177, 189, 245, 0.8), rgba(221, 226, 235));
+    background-color: rgb(131, 149, 176);
     box-shadow: 8px 3px 7px black;
     border: 1px solid white;
-    color: rgb(88, 111, 146);
-    text-shadow: 0 3px 3px lightgrey;
+    color: white;;
+    text-shadow: 0 3px 3px black;
     font-weight: bold;
 
 }
@@ -29,7 +29,7 @@
 
 .EditPackagePage-btn {
     width: 100px;
-    font-size: 15px;
+    font-size: 20px;
     border: 2px solid white;
     box-shadow: 0 5px 5px black;
     background: transparent;
@@ -37,6 +37,10 @@
     font-weight: bold;
     color: white;
     text-shadow: 2px 3px 3px black;
+}
+
+.EditPackagePage-btn:hover {
+    background-color: rgb(88, 111, 146);
 }
 
 .EditPackagePage-select {

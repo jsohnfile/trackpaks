@@ -73,7 +73,7 @@ class AddPackagePage extends Component {
                         type="submit"
                         className="AddPackagePage-btn"
                     >
-                        ADD Package
+                        ADD
                     </button>
                 </form>
             </div>

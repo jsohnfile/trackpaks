@@ -16,7 +16,10 @@
     width: 30%;
     border-radius: 25px;
     height: 400px;
-    background-image: radial-gradient( rgba(146, 163, 240, 0.8), rgba(205, 229, 247, .8));
+    background-color: rgb(131, 149, 176);
     box-shadow: 8px 3px 7px black;
     border: 1px solid white;
+    color: white;
+    text-shadow: 0 3px 3px black;
 }
+

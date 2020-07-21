@@ -39,7 +39,7 @@ class LoginPage extends Component {
           <p className="LoginPage-message">TrackPaks is a one-stop shop to monitor and store your pending packages. Life can't get any easier. Start using your TrackPaks app today!</p>
         </header>
         <div className="LoginPage-form-container">
-          <h2 className="LoginPage-form-header">Log In</h2>
+          <p className="LoginPage-form-header">Log In</p>
           <form className="LoginPage-form" onSubmit={this.handleSubmit} >
             <div className="form-group">
               <div className="col-sm-12">
@@ -52,8 +52,8 @@ class LoginPage extends Component {
               </div>
             </div>
             <div className="form-group">
-              <div className="col-sm-12 text-center">
-                <button className="btn btn-default">Log In</button>&nbsp;&nbsp;&nbsp;
+              <div className="login-btn-container">
+                <button className="login-btn">Log In</button>&nbsp;&nbsp;&nbsp;
               </div>
             </div>
           </form>

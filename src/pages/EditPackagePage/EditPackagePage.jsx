@@ -65,7 +65,7 @@ class EditPackagePage extends Component {
                         type="submit"
                         className="EditPackagePage-btn"
                     >
-                        Save Package
+                        SAVE
                     </button>
                 </form>
             </div>
