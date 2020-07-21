@@ -48,8 +48,9 @@
     border-radius: 5px;
 }
 
- .form-header {
+ .form-p-header {
     color: white;
     text-shadow: 0 3px 3px black;
     font-weight: bold;
+    font-size: 30px;
 }
