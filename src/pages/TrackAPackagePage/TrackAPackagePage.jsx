@@ -27,7 +27,6 @@ class TrackAPackagePage extends Component {
     render() {
         return (
             <div className="TrackAPackagePage-container">
-                <h1>Track a Package</h1>
                 <TrackingForm handleTrackPackage={this.handleTrackPackage}/>
                     {this.state.myPackage.carrier ?
                         <Track myPackage={this.state.myPackage} />

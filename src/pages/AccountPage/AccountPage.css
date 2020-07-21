@@ -7,8 +7,9 @@
 
 .AccountPage-header {
     font-size: 30px;
-    color: rgb(88, 111, 146);
+    color: black;
     text-shadow: 0 3px 3px white;
+    font-weight: bold;
 }
 
 .AccountPage-container {

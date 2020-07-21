@@ -30,6 +30,8 @@ class TrackingForm extends Component {
         return (
             <div className="Track">
                 <form onSubmit={this.handleSubmit} className="track-form">
+                <p className="track-header">Track a Package</p>
+                    <div className="form-container">
                     <div className="form-group">
                         <select
                             className="carrier-select"
@@ -48,7 +50,7 @@ class TrackingForm extends Component {
                     </div>
                     <div className="form-group">
                         <input
-                            className="form-control"
+                            className="Track-tracking"
                             name="trackingNumber"
                             value={this.state.formData.trackingNumber}
                             placeholder="Tracking Number"
@@ -62,6 +64,7 @@ class TrackingForm extends Component {
                     >
                         TRACK
                     </button>
+                </div>
                 </form>
             </div>
         );
