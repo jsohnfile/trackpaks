@@ -10,6 +10,7 @@ class MyPackage extends Component {
     state = {
         isCollapsed: true,
         details: null
+
     }
     collapseDetails = () => {
         this.setState(
@@ -21,8 +22,14 @@ class MyPackage extends Component {
         console.log(details, "<---details")
         this.setState({details: details})
     }
-    componentDidMount() {
-        this.getDetails();
+    addStatus = () => this.props.handleDelivered(this.state.details.tracking_status.status)
+    async componentDidMount() {
+        await this.getDetails();
+        if (this.state.details !== null){
+            if(this.state.details.tracking_status !== null) {
+                await this.addStatus();
+            }
+        }
         // this.refreshDetailId = setInterval(this.getDetails, 1000000)
     }
 
@@ -84,7 +91,7 @@ class MyPackage extends Component {
                     <div className="details-container">
                         {this.state.details!== null? this.state.details.tracking_history === null ? "" :
                         this.state.details.tracking_history.reverse().map(trackDetail => 
-                            <div className="MyPackage-detail">
+                            <div key={trackDetail._id} className="MyPackage-detail">
                                 <div className="MyPackage-divider">|</div>
                                 <PackageDetail key={trackDetail._id} trackDetail={trackDetail} />
                             </div>

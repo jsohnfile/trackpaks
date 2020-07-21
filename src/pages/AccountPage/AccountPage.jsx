@@ -13,7 +13,9 @@ function AccountPage(props) {
                         key={myPackage._id}
                         myPackage={myPackage}
                         handleDeletePackage={props.handleDeletePackage}
+                        handleDelivered={props.handleDelivered}
                     />
+                    
                 )
                 :
                 <p>Go ahead...add a package</p>

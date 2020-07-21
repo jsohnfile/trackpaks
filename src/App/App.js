@@ -16,9 +16,18 @@ class App extends Component {
   state = {
     packages: [],
     user: userService.getUser(),
-    menuClicked: false
+    menuClicked: false,
+    delivered: false,
+    status: []
   }
   
+  handleDelivered = (status) => {
+    let statusArr = this.state.status;
+    statusArr.push(status);
+    this.setState({delivered: statusArr.includes("DELIVERED"), status: statusArr});
+    console.log(statusArr, "<---status");
+  }
+
   handleSignupOrLogin = () => {
     this.setState({
       user: userService.getUser()
@@ -28,7 +37,8 @@ class App extends Component {
   handleLogout = () => {
     userService.logout();
     this.setState({
-      user: null
+      user: null,
+      status: []
     }, () => this.props.history.push('/'));
   }
 
@@ -40,8 +50,9 @@ class App extends Component {
   handleDeletePackage = async idOfPackageToDelete => {
     await packageService.deletePackageAPI(idOfPackageToDelete);
     this.setState(state => ({
-      packages: state.packages.filter(orderPackage => orderPackage._id !== idOfPackageToDelete)
-    }), () => this.props.history.push('/account'));
+      packages: state.packages.filter(orderPackage => orderPackage._id !== idOfPackageToDelete),
+      status:[]
+    }), () => this.getAllPackages())
   }
 
   handleUpdatePackage = async data => {
@@ -54,8 +65,14 @@ class App extends Component {
   getAllPackages = async () => {
     const packages = await packageService.getAllPackagesAPI();
     this.setState({
-      packages
-    }, () => this.props.history.push('/account'));
+      packages,
+      status: []
+
+    }, () => {
+      this.handleDelivered()
+      this.props.history.push('/account')
+      
+    });
   }
 
   handleMenuClick = () => {
@@ -85,13 +102,19 @@ class App extends Component {
               {userService.getUser() ?
                 <div className="App-links">
                   <p className="welcome-user">{userService.getUser().name ? `WELCOME, ${userService.getUser().name.charAt(0).toUpperCase()}${userService.getUser().name.slice(1)}` : ''}</p>
-                    &nbsp;&nbsp;&nbsp;
-                  <p><NavLink exact to="/account" className="account-link-container">MY ACCOUNT</NavLink></p> 
-                    &nbsp;&nbsp;&nbsp;
+
+                  <p><NavLink exact to="/account" className="account-link-container">
+                    <div id="myaccount">MY ACCOUNT</div>
+                    <div className="notification-div">
+                      <div className="notification" style={this.state.delivered?{"display":"block"}:{"display":"none"}}>!</div>
+                    </div>
+                    </NavLink>
+                  </p> 
+
                   <p><NavLink exact to="/add" className="App-link">ADD A PACKAGE</NavLink></p> 
-                    &nbsp;&nbsp;&nbsp;
+
                   <p><NavLink exact to='/track' className="App-link">QUICK TRACK</NavLink></p> 
-                    &nbsp;&nbsp;&nbsp;
+
                   <p><NavLink exact to='/logout' className="App-link" onClick={this.handleLogout}>LOGOUT</NavLink></p> 
                 </div>
                 :
@@ -113,7 +136,7 @@ class App extends Component {
                 } />
                 <Route exact path='/account' render={({ history }) =>
                 userService.getUser() ?
-                  <AccountPage packages={this.state.packages} handleDeletePackage={this.handleDeletePackage} user={this.state.user}/>
+                  <AccountPage packages={this.state.packages} handleDeletePackage={this.handleDeletePackage} user={this.state.user} handleDelivered={this.handleDelivered}/>
                   :
                   <Redirect to='/login' />
               } />
