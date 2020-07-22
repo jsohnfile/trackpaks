@@ -17,7 +17,6 @@ class Track extends Component {
     }
     componentDidMount() {
         this.getDetails();
-        // this.refreshDetailId = setInterval(this.getDetails, 1000000)
     }
 
     render() {

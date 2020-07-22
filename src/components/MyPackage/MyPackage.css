@@ -83,7 +83,7 @@
     box-shadow: 0 5px 5px black;
     color: white;
     text-shadow: 0 3px 3px black;
-    background-color: transparent;
+    background-color: rgb(131, 149, 176);
     padding: 5px;
     border-radius: 8px;
     text-decoration: none;
@@ -92,7 +92,7 @@
 }
 
 .MyPackage-btn:hover {
-    background-color: rgb(131, 149, 176);
+    background-color: rgb(88, 111, 146);
 }
 
 .MyPackage-name {
@@ -159,8 +159,6 @@
     justify-content: space-between;
     width: 100%;
 }
-
-
 
 .details-container {
     width: 100%;

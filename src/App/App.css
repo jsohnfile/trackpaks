@@ -118,13 +118,6 @@
   margin: 100px 0 20px 0;
 }
 
-.App-nav-package-num {
-  border-radius: 50px;
-  border: 1px solid black;
-  width: 25%;
-  background-color: blue;
-}
-
 .account-link-container{
   display: flex;
   flex-wrap: wrap;
@@ -185,7 +178,7 @@
   height: 20px;
   border-radius: 50px;
   color: white;
-  background-color: blue;
+  background-color: rgb(88, 111, 146);
   box-shadow: 0 5px 5px black;
   font-size: 15px;
 }
