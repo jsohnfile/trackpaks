@@ -1,68 +1,53 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# TrackPaks
+## Package tracker
 
-## Available Scripts
+Do you do a lot of online shopping? Can't keep track of when they will all arrive? Tired of signing into each account just to check the tracking? Then TrackPaks is the perfect web app for you. This app allows users to track individual packages or store them on their account to keep track and stay updated, all in one location.
 
-In the project directory, you can run:
+## Screenshots
 
-### `npm start`
+#### MainPage
+![Welcome Page](https://i.imgur.com/2Zj4UM6.png)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### Sign Up Page
+![Sign Up Page](https://i.imgur.com/BSzsMNv.png)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+#### My Account Page
+![My Account Page](https://i.imgur.com/tij97KZ.png)
 
-### `npm test`
+#### Track A Package Page
+![Track A Package Page](https://i.imgur.com/5oYGtJJ.png)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Add A Package Page
+![Add A Package Page](https://i.imgur.com/P5XZ41L.png)
 
-### `npm run build`
+#### Edit A Package Page
+![Edit A Package Page](https://i.imgur.com/7GkirQZ.png)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### View Tracking On Account Page
+![View Tracking On Account Page](https://i.imgur.com/FxQVCPm.png)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Technologies Used
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- MongoDB/Mongoose
+- ExpressJS
+- REACT JS
+- NodeJS
+- CSS
+- HTML
+- JAVSCRIPT
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Getting Started
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+[App Link](https://trackpaks.herokuapp.com/)<br>
+[Trello Planning Board](https://trello.com/b/9O5gzn1i/trackpaks)
 
-### Code Splitting
+## Next Steps
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- Allow users to import all orders from other major sites(ie. Amazon, Etsy, Ebay, etc.)
+- Allow users to search estimated delivery time using zip codes per carrier
