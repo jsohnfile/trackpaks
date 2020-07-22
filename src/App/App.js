@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch, NavLink, Redirect } from 'react-router-dom';
 import './App.css';
-
 import TrackAPackagePage from '../pages/TrackAPackagePage/TrackAPackagePage';
 import AddPackagePage from '../pages/AddPackagePage/AddPackagePage';
 import EditPackagePage from '../pages/EditPackagePage/EditPackagePage';
@@ -67,11 +66,9 @@ class App extends Component {
     this.setState({
       packages,
       status: []
-
     }, () => {
       this.handleDelivered()
       this.props.history.push('/account')
-      
     });
   }
 
@@ -89,86 +86,79 @@ class App extends Component {
     return (
       <div className="App">
           <div className="context">
-          <header className="App-header">
-          <div id="navbar">
-            <button className="openbtn" onClick={this.handleMenuClick}><img alt="TrackPaks logo"className="App-logo" src="https://i.imgur.com/6ip1UVz.png" /></button>
-            <div className="App-trackpaks">TrackPaks</div>
-          </div>
-          </header>
-          <main>
-
-            <div className="sidebar" id="mySidebar" style={this.state.menuClicked ? {"display": "block"}: {"display": "none"}}>
-              <div className="closebtn-container" ><button className="closebtn" onClick={this.handleMenuClick}>X</button></div>
-              {userService.getUser() ?
-                <div className="App-links">
-                  <p className="welcome-user">{userService.getUser().name ? "WELCOME" : ""}</p>
-
-                  <p><NavLink exact to="/account" >
-                  <div className="account-link-container">
-                    <div id="myaccount">MY ACCOUNT</div>
-                    <div className="notification-div">
-                      <div className="notification" style={this.state.delivered?{"display":"block"}:{"display":"none"}}>!</div>
+            <header className="App-header">
+            <div id="navbar">
+              <button className="openbtn" onClick={this.handleMenuClick}><img alt="TrackPaks logo"className="App-logo" src="https://i.imgur.com/6ip1UVz.png" /></button>
+              <div className="App-trackpaks">TrackPaks</div>
+            </div>
+            </header>
+            <main>
+              <div className="sidebar" id="mySidebar" style={this.state.menuClicked ? {"display": "block"}: {"display": "none"}}>
+                <div className="closebtn-container" ><button className="closebtn" onClick={this.handleMenuClick}>X</button></div>
+                  {userService.getUser() ?
+                    <div className="App-links">
+                      <p className="welcome-user">{userService.getUser().name ? "WELCOME" : ""}</p>
+                      <p><NavLink exact to="/account" >
+                      <div className="account-link-container">
+                        <div id="myaccount">MY ACCOUNT</div>
+                        <div className="notification-div">
+                          <div className="notification" style={this.state.delivered?{"display":"block"}:{"display":"none"}}>!</div>
+                        </div>
+                      </div>
+                        </NavLink>
+                      </p> 
+                      <p><NavLink exact to="/add" className="App-link">ADD A PACKAGE</NavLink></p>
+                      <p><NavLink exact to='/track' className="App-link">QUICK TRACK</NavLink></p> 
+                      <p><NavLink exact to='/logout' className="App-link" onClick={this.handleLogout}>LOGOUT</NavLink></p> 
                     </div>
-                  </div>
-                    </NavLink>
-                  </p> 
-
-                  <p><NavLink exact to="/add" className="App-link">ADD A PACKAGE</NavLink></p> 
-
-                  <p><NavLink exact to='/track' className="App-link">QUICK TRACK</NavLink></p> 
-
-                  <p><NavLink exact to='/logout' className="App-link" onClick={this.handleLogout}>LOGOUT</NavLink></p> 
-                </div>
-                :
-                <div className="App-links" id="signup-login">
-                    <NavLink exact to='/signup' className="App-link">SIGNUP</NavLink>
-                    &nbsp;&nbsp;&nbsp;
-                    <NavLink exact to='/' className="App-link">LOGIN</NavLink>
-                    &nbsp;&nbsp;&nbsp;
-                </div>
-              }
-            </div>
-            <div className="content">
-            <Switch>
-              <Route exact path='/signup' render={({ history }) =>
-                  <SignupPage history={history} handleSignupOrLogin={this.handleSignupOrLogin} />
-                } />
-                <Route exact path='/' render={({ history }) =>
-                  <LoginPage history={history} handleSignupOrLogin={this.handleSignupOrLogin} />
-                } />
-                <Route exact path='/account' render={({ history }) =>
-                userService.getUser() ?
-                  <AccountPage packages={this.state.packages} handleDeletePackage={this.handleDeletePackage} user={this.state.user} handleDelivered={this.handleDelivered}/>
-                  :
-                  <Redirect to='/login' />
-              } />
-              <Route exact path='/add' render={() =>
-                userService.getUser() ?
-                  <AddPackagePage handleAddPackage={this.handleAddPackage}/>
-                  :
-                  <Redirect to='/login' />
-              } />
-              <Route exact path='/edit' render={({history, location}) =>
-                userService.getUser() ?
-                  <EditPackagePage handleUpdatePackage={this.handleUpdatePackage} location={location}/>
-                  :
-                  <Redirect to='/login' />
-              } />
-              <Route exact path='/track' render={() =>
-                userService.getUser() ?
-                  <TrackAPackagePage />
-                  :
-                  <Redirect to='/login' />
-              } />
-    
-            </Switch>
-            </div>
-        </main>
-        <footer>
-          <div className="footer-prop"><span id="trackpaks">Trackpaks</span> a jsohnfile</div>
-          <a className="footer-prop" href="https://github.com/jsohnfile/trackpaks"><img alt="github" src="https://i.imgur.com/u8ZIvk4.png"></img></a>
-        </footer>
-
+                    :
+                    <div className="App-links" id="signup-login">
+                        <NavLink exact to='/signup' className="App-link">SIGNUP</NavLink>
+                        &nbsp;&nbsp;&nbsp;
+                        <NavLink exact to='/' className="App-link">LOGIN</NavLink>
+                        &nbsp;&nbsp;&nbsp;
+                    </div>
+                  }
+              </div>
+              <div className="content">
+                <Switch>
+                  <Route exact path='/signup' render={({ history }) =>
+                      <SignupPage history={history} handleSignupOrLogin={this.handleSignupOrLogin} />
+                    } />
+                    <Route exact path='/' render={({ history }) =>
+                      <LoginPage history={history} handleSignupOrLogin={this.handleSignupOrLogin} />
+                    } />
+                    <Route exact path='/account' render={({ history }) =>
+                    userService.getUser() ?
+                      <AccountPage packages={this.state.packages} handleDeletePackage={this.handleDeletePackage} user={this.state.user} handleDelivered={this.handleDelivered}/>
+                      :
+                      <Redirect to='/login' />
+                  } />
+                  <Route exact path='/add' render={() =>
+                    userService.getUser() ?
+                      <AddPackagePage handleAddPackage={this.handleAddPackage}/>
+                      :
+                      <Redirect to='/login' />
+                  } />
+                  <Route exact path='/edit' render={({history, location}) =>
+                    userService.getUser() ?
+                      <EditPackagePage handleUpdatePackage={this.handleUpdatePackage} location={location}/>
+                      :
+                      <Redirect to='/login' />
+                  } />
+                  <Route exact path='/track' render={() =>
+                    userService.getUser() ?
+                      <TrackAPackagePage />
+                      :
+                      <Redirect to='/login' />
+                  } />
+                </Switch>
+              </div>
+          </main>
+          <footer>
+            <div className="footer-prop"><span id="trackpaks">Trackpaks</span> a jsohnfile</div>
+            <a className="footer-prop" href="https://github.com/jsohnfile/trackpaks"><img alt="github" src="https://i.imgur.com/u8ZIvk4.png"></img></a>
+          </footer>
         </div>
         <div className="area" >
                 <ul className="circles">

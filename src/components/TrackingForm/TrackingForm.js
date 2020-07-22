@@ -15,7 +15,6 @@ class TrackingForm extends Component {
             ...this.state.formData,
             [e.target.name]: e.target.value
         }
-
         this.setState({
             formData: formData
         })
@@ -30,41 +29,40 @@ class TrackingForm extends Component {
         return (
             <div className="Track">
                 <form onSubmit={this.handleSubmit} className="track-form">
-                <p className="track-header">Track a Package</p>
-                    <div className="form-container">
-                    <div className="form-group">
-                        <select
-                            className="carrier-select"
-                            name="carrier"
-                            value={this.state.formData.carrier}
-                            onChange={this.handleChange}
-                            required
+                    <p className="track-header">Track a Package</p>
+                        <div className="form-container">
+                        <div className="form-group">
+                            <select
+                                className="carrier-select"
+                                name="carrier"
+                                value={this.state.formData.carrier}
+                                onChange={this.handleChange}
+                                required
+                            >
+                                <option>Select a Carrier</option>
+                                <option value="ups">UPS</option>
+                                <option value="usps">USPS</option>
+                                <option value="fedex">FedEx</option>
+                                <option value="dhl">DHL</option>
+                            </select>
+                        </div>
+                        <div className="form-group">
+                            <input
+                                className="Track-tracking"
+                                name="trackingNumber"
+                                value={this.state.formData.trackingNumber}
+                                placeholder="Tracking Number"
+                                onChange={this.handleChange}
+                                required
+                            />
+                        </div>
+                        <button
+                            type="submit"
+                            className="track-btn"
                         >
-                        <option>Select a Carrier</option>
-                        <option value="ups">UPS</option>
-                        <option value="usps">USPS</option>
-                        <option value="fedex">FedEx</option>
-                        <option value="dhl">DHL</option>
-                        
-                        </select>
+                            TRACK
+                        </button>
                     </div>
-                    <div className="form-group">
-                        <input
-                            className="Track-tracking"
-                            name="trackingNumber"
-                            value={this.state.formData.trackingNumber}
-                            placeholder="Tracking Number"
-                            onChange={this.handleChange}
-                            required
-                        />
-                    </div>
-                    <button
-                        type="submit"
-                        className="track-btn"
-                    >
-                        TRACK
-                    </button>
-                </div>
                 </form>
             </div>
         );

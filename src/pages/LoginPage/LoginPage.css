@@ -56,6 +56,7 @@
 .LoginPage-signup-msg {
     color: white;
 }
+
 .LoginPage a {
     color: rgb(114, 210, 241);
 }
@@ -68,6 +69,7 @@
     text-shadow: 0 3px 3px black;
     background-color: transparent;
     box-shadow: 0 5px 5px black;
+    font-weight: bold;
 }
 
 .login-btn:hover {

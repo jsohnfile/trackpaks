@@ -2,7 +2,6 @@ import tokenService from './tokenService';
 
 const BASE_URL = '/api/packages';
 
-// index
 export function getAllPackagesAPI() {
   return fetch(BASE_URL, {
       headers: {
@@ -12,7 +11,6 @@ export function getAllPackagesAPI() {
   .then(allPackages => allPackages.json());
 }
 
-// create
 export function createPackageAPI(packageToCreate) {
     return fetch(BASE_URL, {
         method: 'POST',
@@ -24,8 +22,6 @@ export function createPackageAPI(packageToCreate) {
     }).then(newPackage => newPackage.json());
 }
 
-
-// delete
 export function deletePackageAPI(packageIdToDelete) {
     return fetch(`${BASE_URL}/${packageIdToDelete}`, {
         method: 'DELETE',
@@ -35,7 +31,6 @@ export function deletePackageAPI(packageIdToDelete) {
     }).then(deletedPackage => deletedPackage.json());
 }
 
-//
 export function updatePackageAPI(packageToUpdate) {
     return fetch(`${BASE_URL}/${packageToUpdate._id}`, {
         method: 'PUT',

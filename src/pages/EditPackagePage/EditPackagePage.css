@@ -28,7 +28,6 @@
     display: flex;
     justify-content: center;
     height: 100%;
-    
 }
 
 .EditPackagePage-btn {
@@ -59,5 +58,5 @@
  .form-header {
     color: rgb(131, 149, 176);
     text-shadow: 0 3px 3px lightgrey;
-     font-weight: bold;
+    font-weight: bold;
 }

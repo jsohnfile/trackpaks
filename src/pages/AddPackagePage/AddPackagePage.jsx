@@ -14,7 +14,6 @@ class AddPackagePage extends Component {
             ...this.state.formData,
             [e.target.name]: e.target.value
         }
-
         this.setState({
             formData: formDataAsUserTypes
         })
@@ -31,7 +30,6 @@ class AddPackagePage extends Component {
                 <form className="AddPackagePage-form-container" onSubmit={this.handleSubmit}>
                     <p className="form-p-header">Add a Package</p>
                     <div className="form-group">
-                        {/* <label>Package Name (required)</label> */}
                         <input
                             className="form-control"
                             name="name"
@@ -42,7 +40,6 @@ class AddPackagePage extends Component {
                         />
                     </div>
                     <div className="form-group">
-                        {/* <label>Carrier Service</label> */}
                         <select
                             className="AddPackagePage-select"
                             name="carrier"
@@ -50,16 +47,14 @@ class AddPackagePage extends Component {
                             onChange={this.handleChange}
                             required
                         >
-                        <option>Select a Carrier</option>
-                        <option value="ups">UPS</option>
-                        <option value="usps">USPS</option>
-                        <option value="fedex">FedEx</option>
-                        <option value="dhl">DHL</option>
-                        
+                            <option>Select a Carrier</option>
+                            <option value="ups">UPS</option>
+                            <option value="usps">USPS</option>
+                            <option value="fedex">FedEx</option>
+                            <option value="dhl">DHL</option>    
                         </select>
                     </div>
                     <div className="form-group">
-                        {/* <label>Tracking Number (required)</label> */}
                         <input
                             className="form-control"
                             name="trackingNumber"

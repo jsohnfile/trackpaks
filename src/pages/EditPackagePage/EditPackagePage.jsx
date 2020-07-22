@@ -44,11 +44,10 @@ class EditPackagePage extends Component {
                             onChange={this.handleChange}
                             required
                         >
-                        <option>Carrier</option>
-                        <option value="ups">UPS</option>
-                        <option value="usps">USPS</option>
-                        <option value="fedex">FedEx</option>
-                        
+                            <option>Carrier</option>
+                            <option value="ups">UPS</option>
+                            <option value="usps">USPS</option>
+                            <option value="fedex">FedEx</option>
                         </select>
                     </div>
                     <div className="form-group">

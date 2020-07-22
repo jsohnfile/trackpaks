@@ -13,7 +13,6 @@ class TrackAPackagePage extends Component {
             ...this.state.myPackage,
             [e.target.name]: e.target.value
         }
-
         this.setState({
             myPackage: formData
         })
@@ -22,7 +21,7 @@ class TrackAPackagePage extends Component {
         this.setState(
             {myPackage: packageData}
         )
-      }
+    }
 
     render() {
         return (
@@ -30,8 +29,8 @@ class TrackAPackagePage extends Component {
                 <TrackingForm handleTrackPackage={this.handleTrackPackage}/>
                     {this.state.myPackage.carrier ?
                         <Track myPackage={this.state.myPackage} />
-                        :
-                        ""}
+                    :
+                    ""}
             </div>
         );
     }

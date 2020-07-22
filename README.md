@@ -43,6 +43,7 @@ Do you do a lot of online shopping? Can't keep track of when they will all arriv
 - CSS
 - HTML
 - JAVSCRIPT
+- shippo api
 
 
 ## Getting Started

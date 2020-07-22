@@ -13,12 +13,9 @@
     color: white;
     text-shadow: 0 3px 3px black;
     cursor: pointer;
-    
     width: 100%;
     max-width: 650px;
-    
     outline: none;
-    text-align: left;
     outline: none;
     font-size: 15px;
     border-radius: 25px;
@@ -47,7 +44,6 @@
 }
 
 .MyPackage-content {
-    /* overflow: hidden; */
     background-color: rgb(221, 226, 235);
     border-radius: 0px 0px 25px 25px;
     border: 2px solid white;
@@ -59,7 +55,6 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-
 }
 
 .MyPackage-divider {
@@ -73,7 +68,6 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-
 }
 
 .MyPackage-btn {
@@ -151,7 +145,6 @@
     text-decoration: none;
     color: white;
     text-shadow: 0 3px 3px black;
-
 }
 
 .button-container {
@@ -167,6 +160,7 @@
 .name-status {
     padding: 18px;
 }
+
 .marker-container {
     padding: 18px;
 }

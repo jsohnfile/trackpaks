@@ -24,7 +24,6 @@ function PackageDetail(props) {
             <div className="PackageDetail-details">
                 {props.trackDetail.status_details}
             </div>
-
         </div>
     );
 }

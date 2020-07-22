@@ -9,4 +9,4 @@ export function getPackageDetails(carrier, trackingNumber) {
         }
     })
     .then(allPackages => allPackages.json());
-    }
+}

@@ -9,7 +9,6 @@
     padding: 20px;
     box-shadow: 0 5px 5px black;
     background-color: rgb(131, 149, 176);
-    
 }
 
 .carrier-select {
@@ -17,7 +16,6 @@
     padding: 4px;
     box-shadow: 0 5px 5px black;
     border: 2px solid lightgrey;
-    
 }
 
 .track-btn {
@@ -40,7 +38,6 @@
     max-width: 650px;
     min-width: 250px;
     margin: 0 20px;
-
 }
 
 .Track-tracking {
