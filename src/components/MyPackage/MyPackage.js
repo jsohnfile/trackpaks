@@ -30,7 +30,7 @@ class MyPackage extends Component {
                 await this.addStatus();
             }
         }
-        this.refreshDetailId = setInterval(this.getDetails, 1000000)
+        this.refreshDetailId = setInterval(this.getDetails, 900000)
     }
 
     render() {
