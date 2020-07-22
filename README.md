@@ -5,11 +5,14 @@ Do you do a lot of online shopping? Can't keep track of when they will all arriv
 
 ## Screenshots
 
-#### MainPage
+#### Main Page/Login Page
 ![Welcome Page](https://i.imgur.com/2Zj4UM6.png)
 
+#### Mobile Friendly
+![Mobile Welcome Page](https://i.imgur.com/r4qC0OE.jpg)
+
 #### Sign Up Page
-![Sign Up Page](https://i.imgur.com/BSzsMNv.png)
+![Sign Up Page](https://i.imgur.com/TKYknmR.png)
 
 #### My Account Page
 ![My Account Page](https://i.imgur.com/tij97KZ.png)

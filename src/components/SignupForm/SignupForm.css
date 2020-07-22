@@ -17,6 +17,7 @@
     background-color: transparent;
     box-shadow: 0 5px 5px black;
     text-decoration: none;
+    font-weight: bold;
 }
 
 .signup-btn:hover {
@@ -29,7 +30,7 @@
     text-shadow: 0 3px 3px black;
 }
 
-.SignupForm .header {
+.SignupForm-header {
     font-size: 30px;
     font-weight: bold;
 }

@@ -41,7 +41,7 @@ class SignupForm extends Component {
     return (
       <div className="SignupForm-container">
         <form className="SignupForm-form" onSubmit={this.handleSubmit} >
-          <p className="header">Sign Up</p>
+          <p className="SignupForm-header">Sign Up</p>
           <div className="SignupForm-field">
             <input type="text" className="form-control" placeholder="Name" value={this.state.name} name="name" onChange={this.handleChange} />
           </div>
