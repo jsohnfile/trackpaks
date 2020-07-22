@@ -17,7 +17,6 @@ collapseDetails = () => {
 
 getDetails = async () => {
     const details = await shippoAPI.getPackageDetails(this.props.myPackage.carrier, this.props.myPackage.trackingNumber);
-    console.log(details, "<---details")
     this.setState({details: details})
 }
 

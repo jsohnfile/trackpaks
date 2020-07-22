@@ -24,7 +24,6 @@ class App extends Component {
     let statusArr = this.state.status;
     statusArr.push(status);
     this.setState({delivered: statusArr.includes("DELIVERED"), status: statusArr});
-    console.log(statusArr, "<---status");
   }
 
   handleSignupOrLogin = () => {
@@ -58,8 +57,6 @@ class App extends Component {
     await packageService.updatePackageAPI(data);
     this.getAllPackages();
   }
-
-
 
   getAllPackages = async () => {
     const packages = await packageService.getAllPackagesAPI();
