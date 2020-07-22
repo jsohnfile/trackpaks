@@ -91,7 +91,7 @@ class App extends Component {
           <div className="context">
           <header className="App-header">
           <div id="navbar">
-            <button className="openbtn" onClick={this.handleMenuClick}><img className="App-logo" src="https://i.imgur.com/6ip1UVz.png" /></button>
+            <button className="openbtn" onClick={this.handleMenuClick}><img alt="TrackPaks logo"className="App-logo" src="https://i.imgur.com/6ip1UVz.png" /></button>
             <div className="App-trackpaks">TrackPaks</div>
           </div>
           </header>
@@ -166,7 +166,7 @@ class App extends Component {
         </main>
         <footer>
           <div className="footer-prop"><span id="trackpaks">Trackpaks</span> a jsohnfile</div>
-          <a className="footer-prop" href="https://github.com/jsohnfile/trackpaks"><img src="https://i.imgur.com/u8ZIvk4.png"></img></a>
+          <a className="footer-prop" href="https://github.com/jsohnfile/trackpaks"><img alt="github" src="https://i.imgur.com/u8ZIvk4.png"></img></a>
         </footer>
 
         </div>
