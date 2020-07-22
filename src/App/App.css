@@ -74,7 +74,7 @@
 }
 
 .App .closebtn {
-  background-color: transparent;
+  background-color: rgb(131, 149, 176);
   margin-right: 15px;
   font-size: 20px;
   border-radius: 5px;
@@ -86,7 +86,7 @@
 }
 
 .App .closebtn:hover {
-  background-color: rgb(139, 139, 209);
+  background-color: rgb(88, 111, 146);
 }
 
 .App .closebtn-container {
