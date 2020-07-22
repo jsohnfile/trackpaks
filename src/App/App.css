@@ -8,11 +8,12 @@
 }
 
 .App-trackpaks {
-  font-size: 30px;
+  font-size: 40px;
   padding-right: 40px;
   text-shadow: 2px 2px 0px black;
   font-weight: bold;
   color: white;
+  font-family: 'Unica One', cursive;
 }
 
 .App-header {
@@ -115,7 +116,7 @@
   color: rgb(88, 111, 146);
   text-shadow: 0 3px 3px white;;
   font-weight: bold;
-  margin: 100px 0 20px 0;
+  margin: 100px 0 50px 0;
 }
 
 .account-link-container{
@@ -150,12 +151,19 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 50px;
+  height: 70px;
   background-color: rgb(88, 111, 146);
   box-shadow: 0 -5px 5px black;
   color: white;
   font-weight: bold;
   text-shadow: 0 3px 3px black;
+  font-size: 15px;
+}
+
+.App span {
+  font-family: 'Unica One', cursive;
+  font-size: 20px;
+  margin-right: 5px;
 }
 
 .footer-prop {

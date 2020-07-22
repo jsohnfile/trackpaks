@@ -101,7 +101,7 @@ class App extends Component {
               <div className="closebtn-container" ><button className="closebtn" onClick={this.handleMenuClick}>X</button></div>
               {userService.getUser() ?
                 <div className="App-links">
-                  <p className="welcome-user">{userService.getUser().name ? `WELCOME, ${userService.getUser().name.charAt(0).toUpperCase()}${userService.getUser().name.slice(1)}` : ''}</p>
+                  <p className="welcome-user">{userService.getUser().name ? "WELCOME" : ""}</p>
 
                   <p><NavLink exact to="/account" >
                   <div className="account-link-container">
@@ -165,7 +165,7 @@ class App extends Component {
             </div>
         </main>
         <footer>
-          <div className="footer-prop">Trackpaks a jsohnfile</div>
+          <div className="footer-prop"><span id="trackpaks">Trackpaks</span> a jsohnfile</div>
           <a className="footer-prop" href="https://github.com/jsohnfile/trackpaks"><img src="https://i.imgur.com/u8ZIvk4.png"></img></a>
         </footer>
 
