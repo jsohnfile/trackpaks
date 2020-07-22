@@ -86,7 +86,7 @@ render() {
               {this.state.details !== null && this.state.details.eta !== null? `ETA: ${this.state.details.eta} ${this.state.details.eta > this.state.details.original_eta? "Delayed" : "On Time"}`: ""}
                 <div className="details-container">
                   {this.state.details!== null? this.state.details.tracking_history === null ? "" :
-                    this.state.details.tracking_history.reverse().map(trackDetail => 
+                    this.state.details.tracking_history.map(trackDetail => 
                       <div key={trackDetail._id} className="MyPackage-detail">
                         <div className="MyPackage-divider">|</div>
                         <PackageDetail key={trackDetail._id} trackDetail={trackDetail} />
