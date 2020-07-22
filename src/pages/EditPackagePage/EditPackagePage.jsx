@@ -48,6 +48,7 @@ class EditPackagePage extends Component {
                             <option value="ups">UPS</option>
                             <option value="usps">USPS</option>
                             <option value="fedex">FedEx</option>
+                            <option value="dhl_express">DHL Express</option>
                         </select>
                     </div>
                     <div className="form-group">

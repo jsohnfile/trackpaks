@@ -70,7 +70,7 @@ render() {
                 : ""}
               </div>
               <div className="transit-location">
-                {this.state.details !== null && this.state.details.address_from!== null? 
+                {this.state.details !== null && this.state.details.address_to!== null? 
                 "Transit"
                 : ""}
               </div>
