@@ -128,12 +128,12 @@
 .account-link-container{
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: center; */
+  justify-content: center;
   align-items: center;
 
 }
 #myaccount {
-  width: 80%;
+  text-align: right;
 }
 
 #myaccount-text {
@@ -174,17 +174,20 @@
 }
 
 .notification-div {
-  width: 20%;
+  margin-left: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .notification {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   border-radius: 50px;
   color: white;
   background-color: blue;
-  padding: 2px;
   box-shadow: 0 5px 5px black;
+  font-size: 15px;
 }
 
 

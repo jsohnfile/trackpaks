@@ -103,11 +103,13 @@ class App extends Component {
                 <div className="App-links">
                   <p className="welcome-user">{userService.getUser().name ? `WELCOME, ${userService.getUser().name.charAt(0).toUpperCase()}${userService.getUser().name.slice(1)}` : ''}</p>
 
-                  <p><NavLink exact to="/account" className="account-link-container">
+                  <p><NavLink exact to="/account" >
+                  <div className="account-link-container">
                     <div id="myaccount">MY ACCOUNT</div>
                     <div className="notification-div">
                       <div className="notification" style={this.state.delivered?{"display":"block"}:{"display":"none"}}>!</div>
                     </div>
+                  </div>
                     </NavLink>
                   </p> 
 
